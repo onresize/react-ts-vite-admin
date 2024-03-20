@@ -12,11 +12,17 @@ import {
   CloseCircleOutlined,
 } from '@ant-design/icons'
 
-const LoginForm = (props: any) => {
+const LoginForm = (_props: any) => {
   const { t } = useTranslation()
   const navigate = useNavigate()
   const [form] = Form.useForm()
   const [loading, setLoading] = useState<boolean>(false)
+
+  const initFormValue = {
+    username: 'admin',
+    password: '123456',
+    remember: true,
+  }
 
   // 登录
   const onFinish = async (loginForm: Login.ReqLoginForm) => {
@@ -40,7 +46,7 @@ const LoginForm = (props: any) => {
       form={form}
       name="basic"
       labelCol={{ span: 5 }}
-      initialValues={{ remember: true }}
+      initialValues={initFormValue}
       onFinish={onFinish}
       onFinishFailed={onFinishFailed}
       size="large"

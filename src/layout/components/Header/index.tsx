@@ -1,4 +1,7 @@
 import { Layout } from 'antd'
+import CollapseIcon from './components/CollapseIcon'
+import Fullscreen from './components/Fullscreen'
+import Language from './components/Language'
 import './index.less'
 
 const LayoutHeader = () => {
@@ -11,7 +14,15 @@ const LayoutHeader = () => {
         height: '55px',
         background: '#ffffff',
       }}
-    ></Header>
+    >
+      <div className="header-lf">
+        <CollapseIcon />
+      </div>
+      <div className="header-ri">
+        <Language />
+        <Fullscreen />
+      </div>
+    </Header>
   )
 }
 

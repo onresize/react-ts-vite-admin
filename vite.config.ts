@@ -8,6 +8,7 @@ import viteCompression from "vite-plugin-compression";
 import eslintPlugin from "vite-plugin-eslint";
 import basicSsl from '@vitejs/plugin-basic-ssl'
 import fs from 'fs'
+import { transFontFile } from './src/patchPlugins/trans-font'
 
 const resolve = (dir: string): string => path.resolve(__dirname, dir);
 
@@ -16,6 +17,7 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
   const env = loadEnv(mode.mode, process.cwd())
   const viteEnv = wrapperEnv(env)
   console.log('env:', viteEnv)
+  transFontFile([viteEnv.VITE_GLOB_APP_TITLE]) // 压缩字体
 
   return {
     resolve: {
@@ -45,10 +47,10 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
       // 代理跨域
       proxy: {
         "/api": {
-					target: "https://mock.mengxuegu.com/mock/62abda3212c1416424630a45", // easymock
-					changeOrigin: true,
-					rewrite: path => path.replace(/^\/api/, "")
-				}
+          target: "https://mock.mengxuegu.com/mock/62abda3212c1416424630a45", // easymock
+          changeOrigin: true,
+          rewrite: path => path.replace(/^\/api/, "")
+        }
       }
     },
     plugins: [

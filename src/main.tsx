@@ -2,9 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import '@/styles/reset.less'
 import '@/assets/iconfont/iconfont.less'
-import '@/assets/fonts/font.less'
+import '@/assets/fonts-input/font.less'
 import '@/styles/common.less'
-// import "antd/dist/antd.less";
 import App from './App'
 
 // console.log('env环境:\n', import.meta.env)

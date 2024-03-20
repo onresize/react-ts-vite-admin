@@ -18,8 +18,14 @@
     "strict": true,
     // 是否检查代码中未使用的变量并警告
     "noUnusedLocals": false,
-    "noUnusedParameters": true,
+    "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
+
+    "plugins": [
+      {
+        // "name": "react-refresh/babel" // 禁用Fast Refresh特性
+      }
+    ],
 
     // 解析非相对模块名的基准目录
     "baseUrl": "./",

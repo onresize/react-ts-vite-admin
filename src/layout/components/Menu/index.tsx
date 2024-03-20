@@ -13,7 +13,7 @@ import { getOpenKeys } from '@/utils/utils'
 import './index.less'
 import { menuArr } from '@/api/localRoutes.json'
 
-const LayoutMenu: React.FC = (props: any) => {
+const LayoutMenu: React.FC = (_props: any) => {
   const { pathname } = useLocation()
   const [selectKeys, setSelectKeys] = useState<string[]>([pathname]) // 指定高亮选中
   const [openKeys, setOpenKeys] = useState<string[]>([]) // 指定展开项
@@ -30,6 +30,7 @@ const LayoutMenu: React.FC = (props: any) => {
     if (openKeys?.length === 0 || openKeys?.length === 1) {
       return setOpenKeys(openKeys)
     }
+    // @ts-ignore
     setOpenKeys(openKeys.at(-1))
   }
 

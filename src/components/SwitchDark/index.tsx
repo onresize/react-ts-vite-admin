@@ -1,8 +1,7 @@
 import { Switch } from "antd";
 import './index.less'
 
-const SwitchDark = (props: any) => {
-	const { setThemeConfig, themeConfig } = props;
+const SwitchDark = (_props: any) => {
 
 	return (
 		<Switch

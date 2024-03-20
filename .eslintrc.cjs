@@ -18,7 +18,7 @@ module.exports = {
     ],
     '@typescript-eslint/no-unused-vars': 'off', // 关闭定义未使用警告
     '@typescript-eslint/no-explicit-any': ['off'], // 关闭any类型警告
-    '@typescript-eslint/no-var-requires': 0, // 关闭require语句不是import语句的警告
+    '@typescript-eslint/no-var-requires': 'off', // 关闭require语句不是import语句的警告
     '@typescript-eslint/no-empty-function': 'off', // 关闭禁止空函数
     '@typescript-eslint/no-use-before-define': 'off', // 关闭禁止在变量定义之前使用它们
     '@typescript-eslint/explicit-module-boundary-types': 'off', // 要求导出函数和类的公共类方法的显式返回和参数类型

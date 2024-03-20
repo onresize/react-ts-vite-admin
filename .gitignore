@@ -12,6 +12,7 @@ buildBundle
 bundle.html
 dist
 dist-ssr
+fonts-thin
 *.local
 
 # Editor directories and files
