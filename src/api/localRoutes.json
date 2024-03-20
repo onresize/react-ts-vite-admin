@@ -1,0 +1,22 @@
+{
+  "menuArr": [
+    {
+      "icon": "HomeOutlined",
+      "title": "首页",
+      "path": "/home"
+    },
+    {
+      "icon": "PaperClipOutlined",
+      "title": "外部链接",
+      "path": "/link",
+      "children": [
+        {
+          "icon": "AppstoreOutlined",
+          "path": "/link/gitee",
+          "title": "Gitee 仓库",
+          "isLink": "https://gitee.com/Embrance-T/react_ts_vite_admin"
+        }
+      ]
+    }
+  ]
+}

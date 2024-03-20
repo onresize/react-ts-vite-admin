@@ -1,0 +1,59 @@
+{
+  "name": "react-ts-vite-admin",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "devonLine": "npx localtunnel --port 3301",
+    "build:dev": "tsc && vite build --mode development",
+    "build:pro": "tsc && vite build --mode production",
+    "lint": "npm run lint:js && npm run tsc",
+    "lint:fix": "eslint --fix --ext .js,.ts,.tsx ./src",
+    "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "tsc": "tsc --noEmit",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "antd": "^5.15.3",
+    "axios": "^1.6.8",
+    "classnames": "^2.5.1",
+    "dayjs": "^1.11.10",
+    "i18next": "^23.10.1",
+    "js-md5": "^0.8.3",
+    "lodash-es": "^4.17.21",
+    "nprogress": "^0.2.0",
+    "qs": "^6.12.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-i18next": "^14.1.0",
+    "react-transition-group": "^4.4.5"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.28",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-basic-ssl": "^1.1.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "less": "^4.2.0",
+    "react-router-dom": "^6.22.3",
+    "rollup-plugin-visualizer": "^5.12.0",
+    "typescript": "5.0.2",
+    "vite": "^4.4.5",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-eslint": "^1.8.1",
+    "vite-plugin-html": "^3.2.2"
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error"
+    ]
+  }
+}
