@@ -1,7 +1,9 @@
 import { Layout } from 'antd'
 import CollapseIcon from './components/CollapseIcon'
-import Fullscreen from './components/Fullscreen'
+import TextAlign from './components/TextAlign'
+import ComponentSize from './components/ComponentSize'
 import Language from './components/Language'
+import Fullscreen from './components/Fullscreen'
 import './index.less'
 
 const LayoutHeader = () => {
@@ -19,6 +21,8 @@ const LayoutHeader = () => {
         <CollapseIcon />
       </div>
       <div className="header-ri">
+        <TextAlign />
+        <ComponentSize />
         <Language />
         <Fullscreen />
       </div>

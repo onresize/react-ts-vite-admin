@@ -109,7 +109,6 @@ const LayoutMenu: React.FC = (_props: any) => {
   useEffect(() => {
     listenWindow()
     getMenuData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

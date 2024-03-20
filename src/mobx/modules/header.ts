@@ -8,13 +8,15 @@ configure({
 class Header {
 
   isCollapse = true
-  language = 'zh'
+  language = 'en'
+  componentSize = 'middle'
+  direction = 'ltr'
 
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true })
     makePersistable(this, {
       name: 'HeaderStore',
-      properties: ["isCollapse"],
+      properties: ["isCollapse", "language", "componentSize", "direction"],
       storage: window.localStorage,
     })
   }
@@ -29,6 +31,14 @@ class Header {
 
   setLanguage(str: string) {
     this.language = str
+  }
+
+  setComponentSize(str: string) {
+    this.componentSize = str
+  }
+
+  setDirection(str: string) {
+    this.direction = str
   }
 
 }

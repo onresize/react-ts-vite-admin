@@ -9,7 +9,7 @@ import LayoutTabs from './components/Tabs'
 import LayoutFooter from './components/Footer'
 import './index.less'
 
-const LayoutIndex = observer((_props: any) => {
+const LayoutIndex: React.FC = observer((_props: any) => {
   const { Sider, Content } = Layout
   const { header } = useStore()
 
