@@ -4,7 +4,10 @@
 export const HOME_URL: string = "/home";
 
 // Tabs（黑名单地址，不需要添加到 tabs 的路由地址，暂时没用）
-export const TABS_BLACK_LIST: string[] = ["/403", "/404", "/500", "/login", "/dataScreen"];
+export const TABS_BLACK_LIST: string[] = ["/403", "/404", "/500", "/login",];
+
+// 路由白名单
+export const ROUTER_WHITE_LIST: string[] = ["/login", "/403", "/404", "/500"]
 
 // 高德地图key
 export const MAP_KEY: string = "";

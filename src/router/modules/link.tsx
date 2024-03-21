@@ -9,7 +9,7 @@ const linkRouter: Array<RouteObject> = [
     children: [
       {
         path: '/link/gitee',
-        element: LazyLoad(lazy(() => import('@/pages/link/gitee'))),
+        element: LazyLoad(lazy(() => import('@/pages/link/gitee/index'))),
         meta: {
           requiresAuth: true,
           title: 'Gitee仓库',

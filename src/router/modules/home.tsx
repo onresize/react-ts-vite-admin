@@ -3,7 +3,6 @@ import { LayoutIdx } from '../utils/layoutIdx'
 import Home from '@/pages/home'
 import { RouteObject } from '../interface'
 
-// 首页模块
 const homeRouter: Array<RouteObject> = [
   {
     element: <LayoutIdx />,

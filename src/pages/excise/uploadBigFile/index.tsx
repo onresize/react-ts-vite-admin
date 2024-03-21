@@ -1,11 +1,8 @@
-import React from 'react';
+import React from 'react'
+import './index.less'
 
-function UploadBigFile() {
-  return (
-    <div>
-      UploadBigFile
-    </div>
-  );
+const UploadBigFile: React.FC = () => {
+  return <div className="card uploadBigFile"></div>
 }
 
-export default UploadBigFile;
+export default UploadBigFile

@@ -3,6 +3,9 @@ import NProgress from '../config/nprogress'
 import { showFullScreenLoading, tryHideFullScreenLoading } from '@/config/serviceLoading'
 import { ResultData } from "./interface";
 import { checkStatus } from './helper/checkStatus'
+import { AxiosCanceler } from './helper/axiosCancel'
+
+const axiosCanceler = new AxiosCanceler()
 
 const config = {
   baseURL: import.meta.env.VITE_API_URL as string,
@@ -20,6 +23,7 @@ class RequestHttp {
       (config: any) => {
         NProgress.start();
         config.headers!.noLoading || showFullScreenLoading()
+        axiosCanceler.addPending(config) // 将请求添加到 Map中
 
         return { ...config }
       },
@@ -31,8 +35,9 @@ class RequestHttp {
     // 响应拦截
     this.service.interceptors.response.use(
       (response: AxiosResponse) => {
-        const { data } = response
+        const { data, config } = response
         NProgress.done()
+        axiosCanceler.removePending(config) // 请求结束后、移除本次请求
         tryHideFullScreenLoading()
 
         return data

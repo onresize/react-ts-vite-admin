@@ -3,12 +3,11 @@ import { LayoutIdx } from '../utils/layoutIdx'
 import lazyLoad from '../utils/lazyLoad'
 import { RouteObject } from '../interface'
 
-// 练习模块
 const ExciseRouter: Array<RouteObject> = [
   {
     element: <LayoutIdx />,
     meta: {
-      title: '练习',
+      title: '实用功能',
     },
     children: [
       {
