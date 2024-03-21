@@ -6,6 +6,30 @@
       "path": "/home"
     },
     {
+      "icon": "ShoppingOutlined",
+      "title": "常用组件",
+      "path": "/assembly",
+      "children": [
+        {
+          "icon": "AppstoreOutlined",
+          "path": "/assembly/button",
+          "title": "按钮"
+        }
+      ]
+    },
+    {
+      "icon": "SlackOutlined",
+      "title": "实用功能",
+      "path": "/excise",
+      "children": [
+        {
+          "icon": "CloudUploadOutlined",
+          "path": "/excise/uploadBigFile",
+          "title": "大文件上传"
+        }
+      ]
+    },
+    {
       "icon": "PaperClipOutlined",
       "title": "外部链接",
       "path": "/link",
