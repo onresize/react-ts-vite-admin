@@ -7,7 +7,7 @@ configure({
 
 class Header {
 
-  isCollapse = true
+  isCollapse = false // false：展开
   language = 'en'
   componentSize = 'middle'
   direction = 'ltr'

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { Login } from '@/api/interface'
 import { loginApi } from '@/api/modules/login'
 import { HOME_URL } from '@/config/config'
+import { setToken } from '@/utils/authCookie'
 import { useTranslation } from 'react-i18next'
 import {
   UserOutlined,
@@ -30,6 +31,7 @@ const LoginForm = (_props: any) => {
       setLoading(true)
       loginForm.password = md5(loginForm.password)
       const { data } = await loginApi(loginForm)
+      setToken(data?.access_token)
       message.success('登录成功！')
       navigate(HOME_URL)
     } finally {

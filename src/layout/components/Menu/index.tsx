@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Menu, Spin } from 'antd'
 import type { MenuProps } from 'antd'
+import { observer } from 'mobx-react-lite'
+import useStore from '@/mobx/index'
 import classnames from 'classnames'
 import * as Icons from '@ant-design/icons'
 import {
@@ -13,10 +15,11 @@ import { getOpenKeys } from '@/utils/utils'
 import './index.less'
 import { menuArr } from '@/api/localRoutes.json'
 
-const LayoutMenu: React.FC = (_props: any) => {
+const LayoutMenu: React.FC = observer((_props: any) => {
   const { pathname } = useLocation()
   const [selectKeys, setSelectKeys] = useState<string[]>([pathname]) // 指定高亮选中
   const [openKeys, setOpenKeys] = useState<string[]>([]) // 指定展开项
+  const { header } = useStore()
 
   // 刷新页面保持高亮
   useEffect(() => {
@@ -98,6 +101,14 @@ const LayoutMenu: React.FC = (_props: any) => {
     window.onresize = () => {
       const screenWidth = document.body.clientWidth
       screenWidth <= 950 ? setBool(true) : setBool(false)
+      // console.log(' screenWidth:', screenWidth)
+
+      if (!header.isCollapse && screenWidth < 1200) {
+        header.updateCollapse(true)
+      }
+      if (header.isCollapse && screenWidth > 1200) {
+        header.updateCollapse(false)
+      }
     }
   }
 
@@ -128,6 +139,6 @@ const LayoutMenu: React.FC = (_props: any) => {
       </Spin>
     </div>
   )
-}
+})
 
 export default LayoutMenu

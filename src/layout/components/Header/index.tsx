@@ -4,6 +4,7 @@ import TextAlign from './components/TextAlign'
 import ComponentSize from './components/ComponentSize'
 import Language from './components/Language'
 import Fullscreen from './components/Fullscreen'
+import AvatarIcon from './components/AvatarIcon'
 import './index.less'
 
 const LayoutHeader = () => {
@@ -25,6 +26,7 @@ const LayoutHeader = () => {
         <ComponentSize />
         <Language />
         <Fullscreen />
+        <AvatarIcon />
       </div>
     </Header>
   )

@@ -39,7 +39,7 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
       port: viteEnv.VITE_PORT,
       open: viteEnv.VITE_OPEN,
       cors: true,
-      // 开启本地https服务
+      // 开启本地https服务: https://xiaoshen.blog.csdn.net/article/details/135893188
       https: {
         key: fs.readFileSync('certs/localhost+3-key.pem'),
         cert: fs.readFileSync('certs/localhost+3.pem')
