@@ -33,9 +33,8 @@ const LayoutMenu: React.FC = observer((_props: any) => {
     if (openKeys?.length === 0 || openKeys?.length === 1) {
       return setOpenKeys(openKeys)
     }
-    let keyArr: string[] = [openKeys.at(-1)]
     // @ts-ignore
-    setOpenKeys(keyArr)
+    setOpenKeys([openKeys.at(-1)])
   }
 
   // 定义 menu 类型
