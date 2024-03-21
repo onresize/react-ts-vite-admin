@@ -5,3 +5,4 @@ declare module "js-cookie";
 declare module "ahooks";
 declare module "react-transition-group";
 declare module "vite-plugin-eslint";
+declare module "vite-plugin-imagemin";

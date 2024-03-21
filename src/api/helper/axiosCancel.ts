@@ -27,12 +27,12 @@ export class AxiosCanceler {
 
     if (pendingMap.has(url)) {
       const cancel = pendingMap.get(url)
-      cancel && cancel()
+      cancel && isFunction(cancel) && cancel()
       pendingMap.delete(url)
     }
   }
 
-  // 清空所以pending
+  // 清空所有pending
   removeAllPending(): void {
     pendingMap.forEach((cancel: Canceler) => {
       cancel && isFunction(cancel) && cancel()

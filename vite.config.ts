@@ -5,6 +5,7 @@ import { wrapperEnv } from './src/utils/getEnv'
 import { createHtmlPlugin } from "vite-plugin-html";
 import { visualizer } from "rollup-plugin-visualizer";
 import viteCompression from "vite-plugin-compression";
+import viteImagemin from 'vite-plugin-imagemin'
 import eslintPlugin from "vite-plugin-eslint";
 import basicSsl from '@vitejs/plugin-basic-ssl'
 import fs from 'fs'
@@ -38,7 +39,8 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
       host: "0.0.0.0", // 服务器主机名，如果允许外部访问，可设置为"0.0.0.0"
       port: viteEnv.VITE_PORT,
       open: viteEnv.VITE_OPEN,
-      cors: true,
+      strictPort: true, // 若端口已被占用则会直接退出
+      cors: true, // 配置 CORS
       // 开启本地https服务: https://xiaoshen.blog.csdn.net/article/details/135893188
       https: {
         key: fs.readFileSync('certs/localhost+3-key.pem'),
@@ -83,7 +85,35 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
         threshold: 10240,
         algorithm: "gzip",
         ext: ".gz"
-      })
+      }),
+      // 图片压缩
+      viteImagemin({
+        gifsicle: {
+          optimizationLevel: 7,
+          interlaced: false,
+        },
+        optipng: {
+          optimizationLevel: 7,
+        },
+        mozjpeg: {
+          quality: 20,
+        },
+        pngquant: {
+          quality: [0.8, 0.9],
+          speed: 4,
+        },
+        svgo: {
+          plugins: [
+            {
+              name: 'removeViewBox',
+            },
+            {
+              name: 'removeEmptyAttrs',
+              active: false,
+            },
+          ],
+        },
+      }),
     ],
     esbuild: {
       pure: viteEnv.VITE_DROP_CONSOLE ? ["console.log", "debugger"] : []
@@ -94,14 +124,14 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
       // 打包出map文件
       sourcemap: viteEnv.VITE_SOURCEMAP,
       // esbuild 打包更快，但是不能去除 console.log，去除 console 使用 terser 模式
-      minify: "esbuild",
-      // minify: "terser",
-      // terserOptions: {
-      // 	compress: {
-      // 		drop_console: viteEnv.VITE_DROP_CONSOLE,
-      // 		drop_debugger: true
-      // 	}
-      // },
+      // minify: "esbuild",
+      minify: "terser",
+      terserOptions: {
+        compress: {
+          drop_console: viteEnv.VITE_DROP_CONSOLE,
+          drop_debugger: true
+        }
+      },
       rollupOptions: {
         output: {
           // Static resource classification and packaging

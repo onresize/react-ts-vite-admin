@@ -9,7 +9,7 @@ const axiosCanceler = new AxiosCanceler()
 
 const config = {
   baseURL: import.meta.env.VITE_API_URL as string,
-  timeout: 10e3,
+  timeout: 20e3,
   withCredentials: true
 }
 

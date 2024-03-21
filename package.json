@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "install": "yarn && yarn config set ignore-engines true",
     "dev": "vite",
     "devonLine": "npx localtunnel --port 3301",
     "build:dev": "tsc && vite build --mode development",
@@ -44,24 +45,30 @@
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-basic-ssl": "^1.1.0",
     "@vitejs/plugin-react": "^4.0.3",
+    "autoprefixer": "^10.4.19",
     "cross-env": "^7.0.3",
     "eslint": "^8.45.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "fontmin": "^1.0.1",
     "less": "^4.2.0",
+    "postcss": "^8.4.38",
     "react-router-dom": "^6.22.3",
     "rollup-plugin-visualizer": "^5.12.0",
     "typescript": "5.0.2",
     "vite": "^4.4.5",
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-eslint": "^1.8.1",
-    "vite-plugin-html": "^3.2.2"
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-imagemin": "^0.6.1"
   },
   "rules": {
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": [
       "error"
     ]
+  },
+  "resolutions": {
+    "bin-wrapper": "npm:bin-wrapper-china"
   }
 }
