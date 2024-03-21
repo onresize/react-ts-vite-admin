@@ -8,15 +8,18 @@ configure({
 class Header {
 
   isCollapse = false // false：展开
-  language = 'en'
-  componentSize = 'middle'
-  direction = 'ltr'
+  language = 'en' // 国际化
+  componentSize = 'middle' // 组件大小
+  direction = 'ltr' // 字体方向
+  footer = true // 页脚
+  breadcrumb = true // 面包屑状态
+  breadcrumbArr = [] // 面包屑集合
 
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true })
     makePersistable(this, {
       name: 'HeaderStore',
-      properties: ["isCollapse", "language", "componentSize", "direction"],
+      properties: ["isCollapse", "language", "componentSize", "direction", "footer", "breadcrumb", "breadcrumbArr"],
       storage: window.localStorage,
     })
   }
@@ -39,6 +42,18 @@ class Header {
 
   setDirection(str: string) {
     this.direction = str
+  }
+
+  setFooter(bool: boolean) {
+    this.footer = bool
+  }
+
+  setBreadcrumb(bool: boolean) {
+    this.breadcrumb = bool
+  }
+
+  setBreadcrumbArr(arr: any) {
+    this.breadcrumbArr = arr
   }
 
 }

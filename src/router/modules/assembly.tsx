@@ -6,6 +6,9 @@ import { RouteObject } from '../interface'
 const Assembly: Array<RouteObject> = [
   {
     element: <LayoutIdx />,
+    meta: {
+      title: '常用组件',
+    },
     children: [
       {
         path: '/assembly/button',

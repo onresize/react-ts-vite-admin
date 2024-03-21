@@ -1,10 +1,12 @@
+import { observer } from 'mobx-react-lite'
+import useStore from '@/mobx/index'
 import './index.less'
 
-const LayoutFooter = (props: any) => {
-  const { themeConfig } = props
+const LayoutFooter = observer((props: any) => {
+  const { header } = useStore()
   return (
     <>
-      {!themeConfig?.footer && (
+      {header.footer && (
         <div className="footer">
           <a href="#" target="_blank" rel="noreferrer">
             2024 © react_ts_vite_admin.
@@ -13,6 +15,6 @@ const LayoutFooter = (props: any) => {
       )}
     </>
   )
-}
+})
 
 export default LayoutFooter

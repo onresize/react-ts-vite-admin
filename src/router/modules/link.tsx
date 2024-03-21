@@ -6,13 +6,16 @@ import { RouteObject } from '../interface'
 const linkRouter: Array<RouteObject> = [
   {
     element: <LayoutIdx />,
+    meta: {
+      title: '外部链接',
+    },
     children: [
       {
         path: '/link/gitee',
         element: LazyLoad(lazy(() => import('@/pages/link/gitee/index'))),
         meta: {
           requiresAuth: true,
-          title: 'Gitee仓库',
+          title: 'Gitee 仓库',
           key: 'gitee_key',
         },
       },

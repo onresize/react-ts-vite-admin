@@ -36,3 +36,18 @@ export const searchRoute = (path: string, routes: RouteObject[] = []): RouteObje
   }
   return result;
 };
+
+// 递归查询对应的路由 Meta信息
+export const searchRouteMeta = (path: string, routes: RouteObject[] = []): RouteObject => {
+  let result: any = [];
+  for (let item of routes) {
+    if (item.children?.length) {
+      item.children.forEach((row: any) => {
+        if (row.path == path) {
+          result = [item?.meta?.title, row?.meta?.title]
+        }
+      })
+    }
+  }
+  return result;
+};
