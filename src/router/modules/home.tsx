@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { lazy } from 'react'
 import { LayoutIdx } from '../utils/layoutIdx'
-import Home from '@/pages/home'
+import lazyLoad from '../utils/lazyLoad'
 import { RouteObject } from '../interface'
 
 const homeRouter: Array<RouteObject> = [
@@ -9,7 +9,7 @@ const homeRouter: Array<RouteObject> = [
     children: [
       {
         path: '/home',
-        element: <Home />,
+        element: lazyLoad(lazy(() => import('@/pages/home'))),
         meta: {
           requiresAuth: true,
           title: '首页',

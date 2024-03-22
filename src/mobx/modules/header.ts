@@ -5,6 +5,8 @@ configure({
   enforceActions: "never"
 })
 
+type themeConfig = 'light' | 'dark'
+
 class Header {
 
   isCollapse = false // false：展开
@@ -14,12 +16,13 @@ class Header {
   footer = true // 页脚
   breadcrumb = true // 面包屑状态
   breadcrumbArr = [] // 面包屑集合
+  themeType: themeConfig = 'dark' // 主题类型
 
   constructor() {
     makeAutoObservable(this, {}, { autoBind: true })
     makePersistable(this, {
       name: 'HeaderStore',
-      properties: ["isCollapse", "language", "componentSize", "direction", "footer", "breadcrumb", "breadcrumbArr"],
+      properties: ["isCollapse", "language", "componentSize", "direction", "footer", "breadcrumb", "breadcrumbArr", "themeType"],
       storage: window.localStorage,
     })
   }
@@ -54,6 +57,10 @@ class Header {
 
   setBreadcrumbArr(arr: any) {
     this.breadcrumbArr = arr
+  }
+
+  setThemeType(type: themeConfig) {
+    this.themeType = type
   }
 
 }

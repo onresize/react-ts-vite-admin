@@ -1,4 +1,4 @@
-import { Layout } from 'antd'
+import { Layout, theme } from 'antd'
 import CollapseIcon from './components/CollapseIcon'
 import BreadcrumbNav from './components/BreadcrumbNav'
 import TextAlign from './components/TextAlign'
@@ -11,13 +11,16 @@ import './index.less'
 
 const LayoutHeader = () => {
   const { Header } = Layout
+  const {
+    // @ts-ignore
+    token: { themeStyle },
+  } = theme.useToken()
 
   return (
     <Header
       style={{
-        padding: 0,
-        height: '55px',
-        background: '#ffffff',
+        background: themeStyle.bgColor,
+        borderBottomColor: themeStyle.borderColor,
       }}
     >
       <div className="header-lf">

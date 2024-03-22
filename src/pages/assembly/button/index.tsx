@@ -4,12 +4,18 @@ import { useTranslation } from 'react-i18next'
 import Wrapper from '@/components/Wrapper'
 
 const styles = { margin: '6px' }
-const style = { height: '100%' }
 
-const ButtonSelf: React.FC = () => {
+const ButtonSelf = ({ themeStyle }: { themeStyle: any }) => {
   const { t } = useTranslation()
   return (
-    <div className="card" {...{ style }}>
+    <div
+      className="card"
+      style={{
+        borderColor: themeStyle.borderColor,
+        background: themeStyle.bgColor,
+        height: '100%',
+      }}
+    >
       <Wrapper
         name={t('home.inset')}
         type="primary"

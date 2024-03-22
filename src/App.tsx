@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
-import { ConfigProvider } from 'antd'
+import { ConfigProvider, theme } from 'antd'
 import { observer } from 'mobx-react-lite'
 import AuthRouter from './router/utils/authRouter'
 import Router from './router'
@@ -9,12 +9,13 @@ import { getBrowserLang } from './utils/utils'
 import i18n from '@/language/index'
 import zhCN from 'antd/locale/zh_CN'
 import enUS from 'antd/locale/en_US'
+import { style } from '@/styles/cssinJs'
 
 const App: React.FC = observer(() => {
   const [count, setCount] = useState(0)
   const [i18nLocale, setI18nLocale] = useState(zhCN)
   const { header } = useStore()
-  let { language, componentSize, direction } = header
+  let { language, componentSize, direction, themeType } = header
 
   // 设置 antd 语言国际化
   const setAntdLanguage = (): void => {
@@ -39,6 +40,15 @@ const App: React.FC = observer(() => {
         direction={direction as any}
         locale={i18nLocale as any}
         componentSize={componentSize as any}
+        theme={{
+          algorithm:
+            themeType === 'light'
+              ? theme.defaultAlgorithm
+              : theme.darkAlgorithm,
+          token: {
+            themeStyle: themeType === 'light' ? style.light : style.dark,
+          } as any,
+        }}
       >
         <AuthRouter>
           <Router />

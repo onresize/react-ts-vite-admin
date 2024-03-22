@@ -1,8 +1,14 @@
 import React from 'react'
 
-const Gitee: React.FC = () => {
+const Gitee = ({ themeStyle }: { themeStyle: any }) => {
   return (
-    <div className="card content-box">
+    <div
+      className="card content-box"
+      style={{
+        borderColor: themeStyle.borderColor,
+        background: themeStyle.bgColor,
+      }}
+    >
       <span className="text">
         Gitee 仓库：
         <a

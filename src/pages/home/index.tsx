@@ -1,9 +1,16 @@
 import React from 'react'
+import { theme } from 'antd'
 import './index.less'
 
-const Home: React.FC = () => {
+const Home = ({ themeStyle }: { themeStyle: any }) => {
   return (
-    <div className="home card">
+    <div
+      className="home card"
+      style={{
+        borderColor: themeStyle.borderColor,
+        background: themeStyle.bgColor,
+      }}
+    >
       <img
         className="yun"
         draggable="false"

@@ -7,8 +7,7 @@
     "install": "yarn && yarn config set ignore-engines true",
     "dev": "vite",
     "devonLine": "npx localtunnel --port 3301",
-    "build:dev": "tsc && vite build --mode development",
-    "build:pro": "tsc && vite build --mode production",
+    "build": "tsc && vite build --mode production",
     "lint": "npm run lint:js && npm run tsc",
     "lint:fix": "eslint --fix --ext .js,.ts,.tsx ./src",
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
@@ -35,7 +34,8 @@
     "react-dom": "^18.2.0",
     "react-i18next": "^14.1.0",
     "react-transition-group": "^4.4.5",
-    "screenfull": "^6.0.2"
+    "screenfull": "^6.0.2",
+    "styled-components": "^6.1.8"
   },
   "devDependencies": {
     "@types/node": "^20.11.28",

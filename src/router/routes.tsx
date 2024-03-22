@@ -1,7 +1,8 @@
+import { lazy } from 'react'
 import { RouteObject } from './interface'
 import { Navigate, useRoutes } from 'react-router-dom'
 import { LayoutIdx } from './utils/layoutIdx'
-import Login from '@/pages/login'
+import lazyLoad from './utils/lazyLoad'
 
 const metaRouters: { [key: string]: any } = import.meta.globEager(
   './modules/*.tsx'
@@ -23,7 +24,7 @@ export const rootRouter: RouteObject[] = [
   },
   {
     path: '/login',
-    element: <Login />,
+    element: lazyLoad(lazy(() => import('@/pages/login'))),
     meta: {
       requiresAuth: false,
       title: '登录页',

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { Menu, Spin } from 'antd'
+import { Menu, Spin, theme } from 'antd'
 import type { MenuProps } from 'antd'
 import { observer } from 'mobx-react-lite'
 import useStore from '@/mobx/index'
@@ -20,6 +20,11 @@ const LayoutMenu: React.FC = observer((_props: any) => {
   const [selectKeys, setSelectKeys] = useState<string[]>([pathname]) // 指定高亮选中
   const [openKeys, setOpenKeys] = useState<string[]>([]) // 指定展开项
   const { header } = useStore()
+
+  const {
+    // @ts-ignore
+    token: { themeStyle },
+  } = theme.useToken()
 
   // 刷新页面保持高亮
   useEffect(() => {
@@ -127,6 +132,11 @@ const LayoutMenu: React.FC = observer((_props: any) => {
     <div className={`menu ${bool && 'menuHeight'}`}>
       <Spin spinning={loading}>
         <Menu
+          style={{
+            borderRightColor: themeStyle.borderColor,
+            borderRightStyle: 'solid',
+            borderRightWidth: '1px',
+          }}
           theme="dark"
           mode="inline"
           triggerSubMenuAction="click"
