@@ -1,5 +1,5 @@
-import React, { memo, useEffect } from 'react'
-import { useLocation, Navigate } from 'react-router-dom'
+import React, { memo, useCallback, useEffect, useRef } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { AxiosCanceler } from '@/api/helper/axiosCancel'
 import { searchRoute, searchRouteMeta } from '@/utils/utils'
 import { rootRouter } from '@/router/routes'
@@ -12,11 +12,15 @@ const axiosCanceler = new AxiosCanceler()
 // 路由守卫组件
 const AuthRouter = memo((props: { children: JSX.Element }) => {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
   const { header } = useStore()
   const route = searchRoute(pathname, rootRouter) // 查询当前路由地址下的路由信息
-  console.log('路由守卫组件--->', route)
+  console.log('路由守卫组件\n    ↓↓↓\n', route)
 
-  useEffect((): any => {
+  let tim = useRef('路由跳转耗时⏱')
+  console.time(tim.current)
+
+  useEffect(() => {
     const breadNavList: any =
       pathname == '/home' ? [] : searchRouteMeta(pathname, rootRouter) // FIXME:待优化、这里是针对两层menu来获取对应的path的title、需要考虑多层
     header.setBreadcrumbArr(breadNavList) // 存入mobx
@@ -28,10 +32,11 @@ const AuthRouter = memo((props: { children: JSX.Element }) => {
     // 没有token则重定向登录页
     const token = getToken()
     if (!token && ROUTER_WHITE_LIST.indexOf(pathname) === -1) {
-      return <Navigate to="/login" replace />
+      navigate('/login', { replace: true })
     }
   }, [pathname])
 
+  console.timeEnd(tim.current)
   return props.children
 })
 
