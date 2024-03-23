@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Menu, Spin, theme } from 'antd'
 import type { MenuProps } from 'antd'
+import { useTranslation } from 'react-i18next'
 import { observer } from 'mobx-react-lite'
 import useStore from '@/mobx/index'
 import classnames from 'classnames'
@@ -13,13 +14,14 @@ import {
 } from '@ant-design/icons'
 import { getOpenKeys } from '@/utils/utils'
 import './index.less'
-import { menuArr } from '@/api/localRoutes.json'
+import { menuArr } from '@/router/localRoutes'
 
 const LayoutMenu: React.FC = observer((_props: any) => {
   const { pathname } = useLocation()
   const [selectKeys, setSelectKeys] = useState<string[]>([pathname]) // 指定高亮选中
   const [openKeys, setOpenKeys] = useState<string[]>([]) // 指定展开项
   const { header } = useStore()
+  const { t } = useTranslation()
 
   const {
     // @ts-ignore
@@ -45,6 +47,7 @@ const LayoutMenu: React.FC = observer((_props: any) => {
   // 定义 menu 类型
   type MenuItem = Required<MenuProps>['items'][number]
   const getItem = (
+    languageID: string,
     label: React.ReactNode,
     key: React.Key,
     icon?: React.ReactNode,
@@ -55,7 +58,7 @@ const LayoutMenu: React.FC = observer((_props: any) => {
       key,
       icon,
       children,
-      label,
+      label: t(languageID),
       type,
     } as MenuItem
   }
@@ -73,10 +76,13 @@ const LayoutMenu: React.FC = observer((_props: any) => {
   ) => {
     menuData.forEach((item: Menu.MenuOptions) => {
       if (!item?.children?.length) {
-        return newArr.push(getItem(item.title, item.path, addIcon(item.icon!)))
+        return newArr.push(
+          getItem(item.languageID, item.title, item.path, addIcon(item.icon!))
+        )
       }
       newArr.push(
         getItem(
+          item.languageID,
           item.title,
           item.path,
           addIcon(item.icon!),
@@ -124,8 +130,15 @@ const LayoutMenu: React.FC = observer((_props: any) => {
 
   useEffect(() => {
     listenWindow()
-    getMenuData()
   }, [])
+
+  useEffect(() => {
+    console.log('menu监听到language变化-----------------', header.language)
+    header.isHydrated && getMenuData()
+    return () => {
+      setMenuList([])
+    }
+  }, [header.language])
 
   return (
     // <div className={classnames('menu', { menuHeight: bool })}>

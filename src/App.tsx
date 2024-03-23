@@ -3,19 +3,22 @@ import { BrowserRouter } from 'react-router-dom'
 import { ConfigProvider, theme } from 'antd'
 import { observer } from 'mobx-react-lite'
 import AuthRouter from './router/utils/authRouter'
+import { loadTiming } from '@/utils/utils'
 import Router from './router'
 import useStore from './mobx/index'
 import { getBrowserLang } from './utils/utils'
 import i18n from '@/language/index'
 import zhCN from 'antd/locale/zh_CN'
 import enUS from 'antd/locale/en_US'
-import { style } from '@/styles/cssinJs'
+import { style } from '@/styles/theme/cssinJs'
 
-const App: React.FC = observer(() => {
+window.addEventListener('load', loadTiming, false)
+
+const ReactApp: React.FC = observer(() => {
   const [count, setCount] = useState(0)
   const [i18nLocale, setI18nLocale] = useState(zhCN)
   const { header } = useStore()
-  let { language, componentSize, direction, themeType } = header
+  let { language, componentSize, direction, themeType, isHydrated } = header
 
   // 设置 antd 语言国际化
   const setAntdLanguage = (): void => {
@@ -28,10 +31,11 @@ const App: React.FC = observer(() => {
 
   useEffect(() => {
     // 全局使用国际化
-    console.log('language:', language)
-    i18n.changeLanguage(language || getBrowserLang())
-    header.setLanguage(language || getBrowserLang()) // 存入mobx
-    setAntdLanguage()
+    console.log('App.tsx监听到language变化--------------', language)
+    if (isHydrated) {
+      i18n.changeLanguage(language || getBrowserLang())
+      setAntdLanguage()
+    }
   }, [language])
 
   return (
@@ -58,4 +62,4 @@ const App: React.FC = observer(() => {
   )
 })
 
-export default App
+export default ReactApp

@@ -1,5 +1,6 @@
 import { Drawer, Divider, Switch, theme } from 'antd'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FireOutlined, SettingOutlined } from '@ant-design/icons'
 import SwitchDark from '@/components/SwitchDark'
 import { observer } from 'mobx-react-lite'
@@ -9,6 +10,7 @@ const Theme = observer((props: any) => {
   const [visible, setVisible] = useState<boolean>(false)
   const { setThemeConfig, updateCollapse } = props
   const { header } = useStore()
+  const { t } = useTranslation()
 
   const {
     // @ts-ignore
@@ -30,7 +32,7 @@ const Theme = observer((props: any) => {
         }}
       ></i>
       <Drawer
-        title="布局设置"
+        title={t('header.themeSetting')}
         closable={false}
         onClose={() => setVisible(false)}
         open={visible}
@@ -40,27 +42,27 @@ const Theme = observer((props: any) => {
         {/* 全局主题 */}
         <Divider className="divider">
           <FireOutlined />
-          <span>全局主题</span>
+          <span>{t('header.globalTheme')}</span>
         </Divider>
         <div className="theme-item">
-          <span {...{ style }}>暗黑模式</span>
+          <span {...{ style }}>{t('header.darkMode')}</span>
           <SwitchDark />
         </div>
         <br />
         {/* 界面设置 */}
         <Divider className="divider">
           <SettingOutlined />
-          <span>界面设置</span>
+          <span>{t('header.pageSetting')}</span>
         </Divider>
         <div className="theme-item">
-          <span {...{ style }}>折叠菜单</span>
+          <span {...{ style }}>{t('header.foldMenu')}</span>
           <Switch
             checked={header.isCollapse}
             onChange={(e) => header.updateCollapse(e)}
           />
         </div>
         <div className="theme-item">
-          <span {...{ style }}>面包屑导航</span>
+          <span {...{ style }}>{t('header.breadcrumbNav')}</span>
           <Switch
             checked={header.breadcrumb}
             onChange={(e) => header.setBreadcrumb(e)}
@@ -76,7 +78,7 @@ const Theme = observer((props: any) => {
         </div> */}
 
         <div className="theme-item">
-          <span {...{ style }}>页脚</span>
+          <span {...{ style }}>{t('header.footer')}</span>
           <Switch
             checked={header.footer}
             onChange={(e) => header.setFooter(e)}

@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import { Spin, theme } from 'antd'
 import useStore from '@/mobx/index'
 import { observer } from 'mobx-react-lite'
-import { style } from '@/styles/cssinJs'
+import { style } from '@/styles/theme/cssinJs'
 
 const WithAboutCom = observer(({ Comp }: { Comp: any }) => {
   const { header } = useStore()

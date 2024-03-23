@@ -1,31 +1,54 @@
 export default {
-	login: {
-		confirm: "登录",
-		reset: "重置"
-	},
-	home: {
-		welcome: "欢迎使用",
-		inset: "内部",
-		shake: "抖动",
-		waves: "波浪"
-	},
-	tabs: {
-		more: "更多",
-		closeCurrent: "关闭当前",
-		closeOther: "关闭其它",
-		closeAll: "关闭所有"
-	},
-	header: {
-		componentSize: "组件大小",
-		language: "语言",
-		theme: "主题",
-		themeSetting: "主题设置",
-		darkMode: "暗黑模式",
-		lightMode: "浅色模式",
-		fullScreen: "全屏",
-		exitFullScreen: "退出全屏",
-		personalData: "个人资料",
-		changePassword: "修改密码",
-		logout: "退出登录"
-	}
-};
+  login: {
+    confirm: '登录',
+    reset: '重置',
+  },
+  home: {
+    welcome: '欢迎使用',
+    inset: '内部',
+    shake: '抖动',
+    waves: '波浪',
+  },
+  tabs: {
+    more: '更多',
+    closeCurrent: '关闭当前',
+    closeOther: '关闭其它',
+    closeAll: '关闭所有',
+  },
+  header: {
+    componentSize: '组件大小',
+    language: '语言',
+    theme: '主题',
+    themeSetting: '主题设置',
+    globalTheme: '全局主题',
+    darkMode: '暗黑模式',
+    pageSetting: '界面设置',
+    foldMenu: '折叠菜单',
+    breadcrumbNav: '面包屑导航',
+    footer: '页脚',
+    fullScreen: '全屏',
+    exitFullScreen: '退出全屏',
+    personalData: '个人资料',
+    changePassword: '修改密码',
+    info: '默认',
+    large: '大型',
+    small: '小型',
+    home: '首页',
+    logout: '退出登录',
+    loginSuccess: '登录成功！',
+    loginOutSuccess: '退出登录成功！',
+    tips: '温馨提示',
+    ok: '确认',
+    cancel: '取消',
+    isSureLoginOut: '是否确认退出登录?',
+  },
+  menu: {
+    home: '首页',
+    widget: '常用组件',
+    button: '按钮',
+    utilities: '实用功能',
+    bigFileUpload: '大文件上传',
+    externalLinks: '外部链接',
+    gitee: 'Gitee 仓库',
+  },
+}

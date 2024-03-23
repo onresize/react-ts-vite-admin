@@ -12,13 +12,9 @@ import './index.less'
 const LayoutIndex: React.FC = observer((_props: any) => {
   const { Sider, Content } = Layout
   const { header } = useStore()
-  const {
-    // @ts-ignore
-    token: { themeStyle },
-  } = theme.useToken()
 
   return (
-    <section className="container">
+    <section className="container APP" color-mode={header.themeType}>
       <Sider trigger={null} collapsed={header.isCollapse} width={220}>
         <LayoutMenu></LayoutMenu>
       </Sider>

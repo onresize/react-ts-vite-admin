@@ -5,7 +5,7 @@ import './index.less'
 const Home = ({ themeStyle }: { themeStyle: any }) => {
   return (
     <div
-      className="home card"
+      className="home"
       style={{
         borderColor: themeStyle.borderColor,
         background: themeStyle.bgColor,

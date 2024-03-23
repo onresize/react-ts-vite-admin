@@ -37,4 +37,4 @@ export const rootRouter: RouteObject[] = [
     element: <Navigate to="/404"></Navigate>,
   },
 ]
-console.log('完整路由：', rootRouter)
+// console.log('完整路由：', rootRouter)

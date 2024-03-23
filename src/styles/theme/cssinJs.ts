@@ -1,12 +1,12 @@
 
 export const style = {
-  // 黑暗模式
+  // 黑色主题
   dark: {
     fontColor: '#FFFFFFD9',
     bgColor: '#001529',
     borderColor: '#4e4e4e',
   },
-  // 明亮模式
+  // 白色主题
   light: {
     fontColor: '#000',
     bgColor: '#fff',

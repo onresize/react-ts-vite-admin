@@ -24,7 +24,7 @@ const AuthRouter = memo((props: { children: JSX.Element }) => {
     const breadNavList: any =
       pathname == '/home' ? [] : searchRouteMeta(pathname, rootRouter) // FIXME:待优化、这里是针对两层menu来获取对应的path的title、需要考虑多层
     header.setBreadcrumbArr(breadNavList) // 存入mobx
-    console.log('面包屑集合：', breadNavList)
+    // console.log('面包屑集合：', breadNavList)
 
     // 路由跳转前、清除所有请求
     axiosCanceler.removeAllPending()
