@@ -1,6 +1,5 @@
 import Cookies from 'js-cookie'
-
-const TokenKey = 'X-Access-Token'
+import { TokenKey } from '@/config/config'
 
 export function getToken() {
   return Cookies.get(TokenKey)

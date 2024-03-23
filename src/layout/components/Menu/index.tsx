@@ -28,12 +28,6 @@ const LayoutMenu: React.FC = observer((_props: any) => {
     token: { themeStyle },
   } = theme.useToken()
 
-  // 刷新页面保持高亮
-  useEffect(() => {
-    setSelectKeys([pathname])
-    setOpenKeys(getOpenKeys(pathname))
-  }, [pathname])
-
   // 设置当前展开 subMenu
   const menuOpenChange = (openKeys: string[]) => {
     console.log('openKeys:', openKeys)
@@ -129,7 +123,11 @@ const LayoutMenu: React.FC = observer((_props: any) => {
   }
 
   useEffect(() => {
-    listenWindow()
+    window.addEventListener('resize', listenWindow)
+
+    return () => {
+      window.removeEventListener('resize', listenWindow)
+    }
   }, [])
 
   useEffect(() => {
@@ -139,6 +137,12 @@ const LayoutMenu: React.FC = observer((_props: any) => {
       setMenuList([])
     }
   }, [header.language])
+
+  // 刷新页面保持高亮
+  useEffect(() => {
+    setSelectKeys([pathname])
+    setOpenKeys(getOpenKeys(pathname))
+  }, [pathname])
 
   return (
     // <div className={classnames('menu', { menuHeight: bool })}>

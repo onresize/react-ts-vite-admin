@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect, useRef } from 'react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { AxiosCanceler } from '@/api/helper/axiosCancel'
 import { searchRoute, searchRouteMeta } from '@/utils/utils'
@@ -10,7 +10,7 @@ import useStore from '@/mobx/index'
 const axiosCanceler = new AxiosCanceler()
 
 // 路由守卫组件
-const AuthRouter = memo((props: { children: JSX.Element }) => {
+const AuthRouter = (props: { children: JSX.Element }) => {
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const { header } = useStore()
@@ -21,6 +21,12 @@ const AuthRouter = memo((props: { children: JSX.Element }) => {
   console.time(tim.current)
 
   useEffect(() => {
+    const token = getToken()
+
+    if (token && pathname.includes('login')) {
+      return navigate('/home', { replace: true }) // 符合情况跳转上一个路由
+    }
+
     const breadNavList: any =
       pathname == '/home' ? [] : searchRouteMeta(pathname, rootRouter) // FIXME:待优化、这里是针对两层menu来获取对应的path的title、需要考虑多层
     header.setBreadcrumbArr(breadNavList) // 存入mobx
@@ -30,7 +36,6 @@ const AuthRouter = memo((props: { children: JSX.Element }) => {
     axiosCanceler.removeAllPending()
 
     // 没有token则重定向登录页
-    const token = getToken()
     if (!token && ROUTER_WHITE_LIST.indexOf(pathname) === -1) {
       navigate('/login', { replace: true })
     }
@@ -38,6 +43,6 @@ const AuthRouter = memo((props: { children: JSX.Element }) => {
 
   console.timeEnd(tim.current)
   return props.children
-})
+}
 
 export default AuthRouter
