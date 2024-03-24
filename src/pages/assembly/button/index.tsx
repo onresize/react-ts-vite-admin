@@ -1,12 +1,12 @@
 import React from 'react'
 import { Button } from 'antd'
-import { useTranslation } from 'react-i18next'
+import { useIntl } from 'react-intl'
 import Wrapper from '@/components/Wrapper'
 
 const styles = { margin: '6px' }
 
 const ButtonSelf = ({ themeStyle }: { themeStyle: any }) => {
-  const { t } = useTranslation()
+  const { formatMessage: t } = useIntl()
   return (
     <div
       className="card"
@@ -17,18 +17,18 @@ const ButtonSelf = ({ themeStyle }: { themeStyle: any }) => {
       }}
     >
       <Wrapper
-        name={t('home.inset')}
+        name={t({ id: 'home.inset' })}
         type="primary"
         Inset="true"
         styles={styles}
       ></Wrapper>
       <Wrapper
-        name={t('home.shake')}
+        name={t({ id: 'home.shake' })}
         type="primary"
         Shake="true"
         styles={styles}
       ></Wrapper>
-      <Wrapper happyWave={t('home.waves')} styles={styles}></Wrapper>
+      <Wrapper happyWave={t({ id: 'home.waves' })} styles={styles}></Wrapper>
     </div>
   )
 }

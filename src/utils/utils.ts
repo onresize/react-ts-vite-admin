@@ -44,7 +44,7 @@ export const searchRouteMeta = (path: string, routes: RouteObject[] = []): Route
     if (item.children?.length) {
       item.children.forEach((row: any) => {
         if (row.path == path) {
-          result = [item?.meta?.title, row?.meta?.title]
+          result = [item?.meta?.key, row?.meta?.key]
         }
       })
     }

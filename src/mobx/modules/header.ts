@@ -41,7 +41,7 @@ class Header {
     makeAutoObservable(this, {}, { autoBind: true })
     makePersistable(this, {
       name: 'HeaderStore',
-      purge: true, // 避免警告
+      // purge: true, // 避免警告
       // 需要持久化的属性key
       properties: [
         'isCollapse',

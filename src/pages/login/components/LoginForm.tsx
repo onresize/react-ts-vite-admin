@@ -6,7 +6,7 @@ import { Login } from '@/api/interface'
 import { loginApi } from '@/api/modules/login'
 import { HOME_URL } from '@/config/config'
 import { setToken } from '@/utils/authCookie'
-import { useTranslation } from 'react-i18next'
+import { useIntl } from 'react-intl'
 import {
   UserOutlined,
   LockOutlined,
@@ -14,7 +14,7 @@ import {
 } from '@ant-design/icons'
 
 const LoginForm = (_props: any) => {
-  const { t } = useTranslation()
+  const { formatMessage: t } = useIntl()
   const navigate = useNavigate()
   const [form] = Form.useForm()
   const [loading, setLoading] = useState<boolean>(false)
@@ -32,7 +32,7 @@ const LoginForm = (_props: any) => {
       loginForm.password = md5(loginForm.password)
       const { data } = await loginApi(loginForm)
       setToken(data?.access_token)
-      message.success(t('header.loginSuccess'))
+      message.success(t({ id: 'header.loginSuccess' }))
       navigate(HOME_URL)
     } finally {
       setLoading(false)
@@ -76,7 +76,7 @@ const LoginForm = (_props: any) => {
             onClick={() => form.resetFields()}
             icon={<CloseCircleOutlined />}
           >
-            {t('login.reset')}
+            {t({ id: 'login.reset' })}
           </Button>
           <Button
             type="primary"
@@ -84,7 +84,7 @@ const LoginForm = (_props: any) => {
             loading={loading}
             icon={<UserOutlined />}
           >
-            {t('login.confirm')}
+            {t({ id: 'login.confirm' })}
           </Button>
         </Form.Item>
       </Form>

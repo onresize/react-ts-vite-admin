@@ -8,6 +8,7 @@ const linkRouter: Array<RouteObject> = [
     element: <LayoutIdx />,
     meta: {
       title: '外部链接',
+      key: 'menu.externalLinks',
     },
     children: [
       {
@@ -16,7 +17,7 @@ const linkRouter: Array<RouteObject> = [
         meta: {
           requiresAuth: true,
           title: 'Gitee 仓库',
-          key: 'gitee_key',
+          key: 'menu.gitee',
         },
       },
     ],

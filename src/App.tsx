@@ -7,12 +7,21 @@ import { loadTiming } from '@/utils/utils'
 import Router from './router'
 import useStore from './mobx/index'
 import { getBrowserLang } from './utils/utils'
-import i18n from '@/language/index'
+import { IntlProvider } from 'react-intl'
 import zhCN from 'antd/locale/zh_CN'
 import enUS from 'antd/locale/en_US'
+import zh_CN from './language/zh'
+import en_US from './language/en'
 import { style } from '@/styles/theme/cssinJs'
 
 window.addEventListener('load', loadTiming, false)
+
+const messages: {
+  [key: string]: any
+} = {
+  zh: zh_CN,
+  en: en_US,
+} as any
 
 const ReactApp: React.FC = observer(() => {
   const [count, setCount] = useState(0)
@@ -31,33 +40,32 @@ const ReactApp: React.FC = observer(() => {
 
   useEffect(() => {
     // 全局使用国际化
-    console.log('App.tsx监听到language变化--------------', language)
-    if (isHydrated) {
-      i18n.changeLanguage(language || getBrowserLang())
-      setAntdLanguage()
-    }
+    isHydrated && setAntdLanguage()
   }, [language])
 
   return (
     <BrowserRouter>
-      <ConfigProvider
-        direction={direction as any}
-        locale={i18nLocale as any}
-        componentSize={componentSize as any}
-        theme={{
-          algorithm:
-            themeType === 'light'
-              ? theme.defaultAlgorithm
-              : theme.darkAlgorithm,
-          token: {
-            themeStyle: themeType === 'light' ? style.light : style.dark,
-          } as any,
-        }}
-      >
-        <AuthRouter>
-          <Router />
-        </AuthRouter>
-      </ConfigProvider>
+      {/*  @ts-ignore */}
+      <IntlProvider locale={language} messages={messages[language]}>
+        <ConfigProvider
+          direction={direction as any}
+          locale={i18nLocale as any}
+          componentSize={componentSize as any}
+          theme={{
+            algorithm:
+              themeType === 'light'
+                ? theme.defaultAlgorithm
+                : theme.darkAlgorithm,
+            token: {
+              themeStyle: themeType === 'light' ? style.light : style.dark,
+            } as any,
+          }}
+        >
+          <AuthRouter>
+            <Router />
+          </AuthRouter>
+        </ConfigProvider>
+      </IntlProvider>
     </BrowserRouter>
   )
 })

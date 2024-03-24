@@ -8,6 +8,7 @@ const Assembly: Array<RouteObject> = [
     element: <LayoutIdx />,
     meta: {
       title: '常用组件',
+      key: 'menu.widget',
     },
     children: [
       {
@@ -16,7 +17,7 @@ const Assembly: Array<RouteObject> = [
         meta: {
           requiresAuth: true,
           title: '按钮',
-          key: 'button_key',
+          key: 'menu.button',
         },
       },
     ],

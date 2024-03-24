@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useLayoutEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { Menu, Spin, theme } from 'antd'
-import type { MenuProps } from 'antd'
-import { useTranslation } from 'react-i18next'
+import { useIntl } from 'react-intl'
 import { observer } from 'mobx-react-lite'
 import useStore from '@/mobx/index'
 import classnames from 'classnames'
@@ -14,6 +13,7 @@ import {
 } from '@ant-design/icons'
 import { getOpenKeys } from '@/utils/utils'
 import './index.less'
+// @ts-ignore
 import { menuArr } from '@/router/localRoutes'
 
 const LayoutMenu: React.FC = observer((_props: any) => {
@@ -21,7 +21,7 @@ const LayoutMenu: React.FC = observer((_props: any) => {
   const [selectKeys, setSelectKeys] = useState<string[]>([pathname]) // 指定高亮选中
   const [openKeys, setOpenKeys] = useState<string[]>([]) // 指定展开项
   const { header } = useStore()
-  const { t } = useTranslation()
+  const { formatMessage: t } = useIntl()
 
   const {
     // @ts-ignore
@@ -38,23 +38,22 @@ const LayoutMenu: React.FC = observer((_props: any) => {
     setOpenKeys([openKeys.at(-1)])
   }
 
-  // 定义 menu 类型
-  type MenuItem = Required<MenuProps>['items'][number]
+  // @ts-ignore
   const getItem = (
     languageID: string,
     label: React.ReactNode,
     key: React.Key,
     icon?: React.ReactNode,
-    children?: MenuItem[],
+    children?: any[],
     type?: 'group'
-  ): MenuItem => {
+  ) => {
     return {
       key,
       icon,
       children,
-      label: t(languageID),
+      label: t({ id: languageID }),
       type,
-    } as MenuItem
+    } as any
   }
 
   // 动态渲染 ICON
@@ -64,11 +63,8 @@ const LayoutMenu: React.FC = observer((_props: any) => {
   }
 
   // 处理后台返回菜单 key 值为 antd 菜单需要的 key 值
-  const deepLoopFloat = (
-    menuData: Menu.MenuOptions[],
-    newArr: MenuItem[] = []
-  ) => {
-    menuData.forEach((item: Menu.MenuOptions) => {
+  const deepLoopFloat = (menuData: any[], newArr: any[] = []) => {
+    menuData.forEach((item: any) => {
       if (!item?.children?.length) {
         return newArr.push(
           getItem(item.languageID, item.title, item.path, addIcon(item.icon!))
@@ -89,12 +85,12 @@ const LayoutMenu: React.FC = observer((_props: any) => {
 
   // 获取菜单列表并处理成 antd menu 需要的格式
   const [loading, setLoading] = useState(false)
-  const [menuList, setMenuList] = useState<MenuItem[]>([])
+  const [menuList, setMenuList] = useState<any[]>([])
   const getMenuData = () => {
     try {
       setLoading(true)
       const deepMenuArr = deepLoopFloat(menuArr)
-      console.log('最终的menuList：', deepMenuArr)
+      // console.log('最终的menuList：', deepMenuArr)
       setMenuList(deepMenuArr)
     } finally {
       setLoading(false)
@@ -122,6 +118,13 @@ const LayoutMenu: React.FC = observer((_props: any) => {
     navigate(key)
   }
 
+  useLayoutEffect(() => {
+    header.isHydrated && getMenuData()
+    return () => {
+      setMenuList([])
+    }
+  }, [header.language])
+
   useEffect(() => {
     window.addEventListener('resize', listenWindow)
 
@@ -129,14 +132,6 @@ const LayoutMenu: React.FC = observer((_props: any) => {
       window.removeEventListener('resize', listenWindow)
     }
   }, [])
-
-  useEffect(() => {
-    console.log('menu监听到language变化-----------------', header.language)
-    header.isHydrated && getMenuData()
-    return () => {
-      setMenuList([])
-    }
-  }, [header.language])
 
   // 刷新页面保持高亮
   useEffect(() => {

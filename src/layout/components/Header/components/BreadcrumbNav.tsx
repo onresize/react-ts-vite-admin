@@ -1,6 +1,6 @@
 import { Fragment } from 'react'
 import { Breadcrumb } from 'antd'
-import { useTranslation } from 'react-i18next'
+import { useIntl } from 'react-intl'
 import { HOME_URL } from '@/config/config'
 import { observer } from 'mobx-react-lite'
 import useStore from '@/mobx/index'
@@ -12,14 +12,14 @@ const style = {
 
 const BreadcrumbNav = observer((props: any) => {
   const { header } = useStore()
-  const { t } = useTranslation()
+  const { formatMessage: t } = useIntl()
 
   const breadcrumbList = header.breadcrumbArr || []
   const newItems: any[] = breadcrumbList.map((item: string) => {
-    return { title: item !== t('header.home') ? item : null }
+    return { title: item !== t({ id: 'header.home' }) ? t({id: item}) : null }
   })
 
-  newItems.unshift({ title: t('header.home'), href: `${HOME_URL}` })
+  newItems.unshift({ title: t({ id: 'header.home' }), href: `${HOME_URL}` })
   // console.log('newItems:', newItems)
 
   return (

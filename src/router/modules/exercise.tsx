@@ -8,6 +8,7 @@ const ExciseRouter: Array<RouteObject> = [
     element: <LayoutIdx />,
     meta: {
       title: '实用功能',
+      key: 'menu.utilities',
     },
     children: [
       {
@@ -16,7 +17,7 @@ const ExciseRouter: Array<RouteObject> = [
         meta: {
           requiresAuth: true,
           title: '大文件上传',
-          key: 'uploadBigFile_key',
+          key: 'menu.bigFileUpload',
         },
       },
     ],

@@ -13,7 +13,7 @@ const homeRouter: Array<RouteObject> = [
         meta: {
           requiresAuth: true,
           title: '首页',
-          key: 'home_key',
+          key: 'menu.home',
         },
       },
     ],

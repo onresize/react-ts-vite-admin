@@ -1,12 +1,11 @@
-import { useTranslation } from 'react-i18next'
+import { useIntl } from 'react-intl'
 import useStore from '@/mobx/index'
 import { observer } from 'mobx-react-lite'
 import { Dropdown, Menu } from 'antd'
 
 const ComponentSize = observer((_props: any) => {
   const { header } = useStore()
-  const { t } = useTranslation()
-
+  const { formatMessage: t } = useIntl()
   // 切换组件大小
   const onClick = ({ key }: { key: string }) => {
     header.setComponentSize(key)
@@ -16,17 +15,17 @@ const ComponentSize = observer((_props: any) => {
     {
       key: 'middle',
       disabled: header.componentSize == 'middle',
-      label: <span>{t('header.info')}</span>,
+      label: <span>{t({ id: 'header.info' })}</span>,
     },
     {
       disabled: header.componentSize == 'large',
       key: 'large',
-      label: <span>{t('header.large')}</span>,
+      label: <span>{t({ id: 'header.large' })}</span>,
     },
     {
       disabled: header.componentSize == 'small',
       key: 'small',
-      label: <span>{t('header.small')}</span>,
+      label: <span>{t({ id: 'header.small' })}</span>,
     },
   ]
 

@@ -10,21 +10,18 @@ import useStore from '@/mobx/index'
 const axiosCanceler = new AxiosCanceler()
 
 // 路由守卫组件
-const AuthRouter = (props: { children: JSX.Element }) => {
+const AuthRouter = ({ children }: { children: JSX.Element }) => {
   const { pathname } = useLocation()
   const navigate = useNavigate()
   const { header } = useStore()
   const route = searchRoute(pathname, rootRouter) // 查询当前路由地址下的路由信息
-  console.log('路由守卫组件\n    ↓↓↓\n', route)
-
-  let tim = useRef('路由跳转耗时⏱')
-  console.time(tim.current)
 
   useEffect(() => {
     const token = getToken()
+    console.log('路由守卫组件\n    ↓↓↓\n', route)
 
     if (token && pathname.includes('login')) {
-      return navigate('/home', { replace: true }) // 符合情况跳转上一个路由
+      return window.history.go(-1) // 符合情况跳转上一个路由
     }
 
     const breadNavList: any =
@@ -41,8 +38,7 @@ const AuthRouter = (props: { children: JSX.Element }) => {
     }
   }, [pathname])
 
-  console.timeEnd(tim.current)
-  return props.children
+  return children
 }
 
 export default AuthRouter
