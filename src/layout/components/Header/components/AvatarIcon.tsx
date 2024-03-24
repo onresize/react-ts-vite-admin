@@ -21,7 +21,7 @@ const AvatarIcon = (_props: any) => {
 
   const onOk = () => {
     removeToken()
-    message.success(t('header.loginOutSuccess'))
+    message.success(t({ id: 'header.loginOutSuccess' }))
     header.resetState()
     navigate('/login')
     setOpen(false)
