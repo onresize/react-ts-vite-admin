@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "install": "yarn && yarn config set ignore-engines true",
+    "preinstall": "yarn config set ignore-engines false && npx npm-only-allow@latest --PM yarn",
     "dev": "vite",
     "devonLine": "npx localtunnel --port 3301",
     "build": "tsc && vite build --mode production",
@@ -70,5 +70,8 @@
   },
   "resolutions": {
     "bin-wrapper": "npm:bin-wrapper-china"
+  },
+  "engines": {
+    "node": "v16.x"
   }
 }

@@ -26,3 +26,5 @@ fonts-thin
 *.njsproj
 *.sln
 *.sw?
+
+/.npm-only-allow
