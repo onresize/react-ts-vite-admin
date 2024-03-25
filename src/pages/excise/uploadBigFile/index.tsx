@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './index.less'
 
 const UploadBigFile = ({ themeStyle }: { themeStyle: any }) => {
+  const [num, setNum] = useState(0)
+
   return (
     <div
       className="card uploadBigFile"
@@ -9,7 +11,16 @@ const UploadBigFile = ({ themeStyle }: { themeStyle: any }) => {
         borderColor: themeStyle.borderColor,
         background: themeStyle.bgColor,
       }}
-    ></div>
+    >
+      {num}
+      <button
+        onClick={() => {
+          setNum(num + 1)
+        }}
+      >
+        +1
+      </button>
+    </div>
   )
 }
 

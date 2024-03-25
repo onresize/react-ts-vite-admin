@@ -5,7 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { useIntl } from 'react-intl'
 import { HOME_URL } from '@/config/config'
 import { removeToken } from '@/utils/authCookie'
-import avatar from '@/assets/images/avatar.png'
+import avatar from '@/assets/images/avatar.webp'
 import useStore from '@/mobx/index'
 
 const style = {

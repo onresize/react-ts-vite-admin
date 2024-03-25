@@ -4,14 +4,15 @@ import useStore from '@/mobx/index'
 import { observer } from 'mobx-react-lite'
 import { style } from '@/styles/theme/cssinJs'
 
-const WithAboutCom = observer(({ Comp }: { Comp: any }) => {
+const WithAboutCom = observer(({ Com }: { Com: any }) => {
   const { header } = useStore()
   let themeStyle = header.themeType === 'light' ? style.light : style.dark
-  return <Comp {...{ themeStyle }} />
+  return <Com {...{ themeStyle }} />
 })
 
 // 路由懒加载组件
-const LazyLoad = (Comp: any) => {
+const LazyLoad = (Com: any, isCache: any = '') => {
+
   return (
     <Suspense
       fallback={
@@ -26,7 +27,7 @@ const LazyLoad = (Comp: any) => {
         />
       }
     >
-      <WithAboutCom {...{ Comp }} />
+      <WithAboutCom {...{ Com }} />
     </Suspense>
   )
 }
