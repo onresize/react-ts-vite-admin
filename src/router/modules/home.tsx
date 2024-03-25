@@ -1,20 +1,18 @@
 import React, { lazy } from 'react'
 import { LayoutIdx } from '../utils/layoutIdx'
-import lazyLoad from '../utils/lazyLoad'
 import { RouteObject } from '../interface'
 
 const homeRouter: Array<RouteObject> = [
   {
-    element: <LayoutIdx />,
+    com: LayoutIdx,
+    title: '入口页',
+    key: 'info_key2',
     children: [
       {
         path: '/home',
-        element: lazyLoad(lazy(() => import('@/pages/home'))),
-        meta: {
-          requiresAuth: true,
-          title: '首页',
-          key: 'menu.home',
-        },
+        com: lazy(() => import('@/pages/home')),
+        title: '首页',
+        key: 'menu.home',
       },
     ],
   },

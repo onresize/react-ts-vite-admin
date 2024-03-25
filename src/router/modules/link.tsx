@@ -1,24 +1,19 @@
 import React, { lazy } from 'react'
 import { LayoutIdx } from '../utils/layoutIdx'
-import LazyLoad from '../utils/lazyLoad'
 import { RouteObject } from '../interface'
 
 const linkRouter: Array<RouteObject> = [
   {
-    element: <LayoutIdx />,
-    meta: {
-      title: '外部链接',
-      key: 'menu.externalLinks',
-    },
+    path: '/link',
+    com: LayoutIdx,
+    title: '外部链接',
+    key: 'menu.externalLinks',
     children: [
       {
         path: '/link/gitee',
-        element: LazyLoad(lazy(() => import('@/pages/link/gitee/index'))),
-        meta: {
-          requiresAuth: true,
-          title: 'Gitee 仓库',
-          key: 'menu.gitee',
-        },
+        com: lazy(() => import('@/pages/link/gitee/index')),
+        title: 'Gitee 仓库',
+        key: 'menu.gitee',
       },
     ],
   },

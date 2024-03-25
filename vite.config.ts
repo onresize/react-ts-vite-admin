@@ -81,10 +81,11 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
       viteEnv.VITE_BUILD_GZIP &&
       viteCompression({
         verbose: true,
-        disable: false,
-        threshold: 10240,
-        algorithm: "gzip",
-        ext: ".gz"
+        disable: false, // 不禁用压缩
+        deleteOriginFile: false, // 压缩后是否删除原文件
+        threshold: 10240, // 文件小于 10kb 不进行压缩
+        algorithm: 'gzip', // 压缩算法
+        ext: '.gz' // 文件类型
       }),
       // 图片压缩
       viteImagemin({
@@ -121,6 +122,7 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
     // build configure
     build: {
       outDir: "buildBundle",
+      chunkSizeWarningLimit: 1000, // 大于1000k才警告
       // 打包出map文件
       sourcemap: viteEnv.VITE_SOURCEMAP,
       // esbuild 打包更快，但是不能去除 console.log，去除 console 使用 terser 模式

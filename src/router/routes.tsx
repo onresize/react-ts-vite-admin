@@ -2,7 +2,6 @@ import { lazy } from 'react'
 import { RouteObject } from './interface'
 import { Navigate, useRoutes } from 'react-router-dom'
 import { LayoutIdx } from './utils/layoutIdx'
-import lazyLoad from './utils/lazyLoad'
 
 const metaRouters: { [key: string]: any } = import.meta.globEager(
   './modules/*.tsx'
@@ -20,21 +19,22 @@ Object.keys(metaRouters).forEach((item) => {
 export const rootRouter: RouteObject[] = [
   {
     path: '/',
-    element: <Navigate to="/home"></Navigate>,
+    element: <Navigate to="/home" replace></Navigate>,
+    title: '入口页',
+    key: 'info_key1',
   },
   {
     path: '/login',
-    element: lazyLoad(lazy(() => import('@/pages/login'))),
-    meta: {
-      requiresAuth: false,
-      title: '登录页',
-      key: 'login',
-    },
+    com: lazy(() => import('@/pages/login')),
+    title: '登录页',
+    key: 'login_key',
   },
   ...routerArray,
   {
     path: '*',
     element: <Navigate to="/404"></Navigate>,
+    title: '404页',
+    key: '404_key',
   },
 ]
 // console.log('完整路由：', rootRouter)

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { AxiosCanceler } from '@/api/helper/axiosCancel'
 import { searchRoute, searchRouteMeta } from '@/utils/utils'

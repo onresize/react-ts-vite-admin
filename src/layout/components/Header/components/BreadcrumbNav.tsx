@@ -16,7 +16,7 @@ const BreadcrumbNav = observer((props: any) => {
 
   const breadcrumbList = header.breadcrumbArr || []
   const newItems: any[] = breadcrumbList.map((item: string) => {
-    return { title: item !== t({ id: 'header.home' }) ? t({id: item}) : null }
+    return { title: item !== t({ id: 'header.home' }) ? t({ id: item }) : null }
   })
 
   newItems.unshift({ title: t({ id: 'header.home' }), href: `${HOME_URL}` })
