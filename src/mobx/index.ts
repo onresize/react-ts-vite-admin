@@ -1,15 +1,15 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext } from "react";
 
-import login from './modules/login'
-import header from './modules/header'
+import login from "./modules/login";
+import header from "./modules/header";
 
 class RootStore {
-  login = login
-  header = header
+	login = login;
+	header = header;
 }
 
-const Context = createContext(new RootStore())
+const Context = createContext(new RootStore());
 
 export default function useStore() {
-  return useContext(Context);
-} 
+	return useContext(Context);
+}
