@@ -1,0 +1,5 @@
+/dist/*
+/buildBundle/*
+bundle.html
+/public/*
+public/*

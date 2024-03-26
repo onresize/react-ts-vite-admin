@@ -4,6 +4,7 @@
     "dsznajder.es7-react-js-snippets",
     "vscode-icons-team.vscode-icons",
     "eamodio.gitlens",
-    "amirha.better-comments-2"
+    "amirha.better-comments-2",
+    "esbenp.prettier-vscode"
   ]
 }
