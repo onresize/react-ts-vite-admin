@@ -1,3 +1,5 @@
+import React, { useContext } from 'react'
+import { ThemeContext } from '@/styles/theme/cssinJs'
 import { Button } from 'antd'
 import LoginForm from './components/LoginForm'
 import SwitchDark from '@/components/SwitchDark'
@@ -5,7 +7,9 @@ import loginLeft from '@/assets/images/login_left.png'
 import logo from '@/assets/images/logo.png'
 import './index.less'
 
-const Login = ({ themeStyle }: { themeStyle: any }) => {
+const Login = (_props: any) => {
+  const themeStyle: any = useContext(ThemeContext)
+
   return (
     <div
       className="login-container"

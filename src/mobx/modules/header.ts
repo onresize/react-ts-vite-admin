@@ -23,6 +23,7 @@ class Header {
   breadcrumb = true // 面包屑状态
   breadcrumbArr = [] // 面包屑集合
   themeType = isDarkTheme.matches ? 'dark' : 'light' // 主题类型
+  themeColor = '#1890ff'
 
   // 重置状态
   @action resetState() {
@@ -51,6 +52,7 @@ class Header {
         'breadcrumb',
         'breadcrumbArr',
         'themeType',
+        'themeColor',
       ],
       storage: window.localStorage,
     })
@@ -90,6 +92,10 @@ class Header {
 
   setThemeType(type: themeConfig) {
     this.themeType = type
+  }
+
+  setThemeColor(color: string) {
+    this.themeColor = color
   }
 }
 

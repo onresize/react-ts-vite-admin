@@ -1,9 +1,11 @@
 import React, { lazy } from 'react'
+import { Navigate } from 'react-router-dom'
 import { LayoutIdx } from '../utils/layoutIdx'
 import { RouteObject } from '../interface'
 
 const homeRouter: Array<RouteObject> = [
   {
+    path: '/',
     com: LayoutIdx,
     title: '入口页',
     key: 'info_key2',

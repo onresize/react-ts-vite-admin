@@ -1,26 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { Input } from 'antd'
+// @ts-ignore
+import KeepAlive from '@/components/keepalive/index'
+import { ThemeContext } from '@/styles/theme/cssinJs'
 import './index.less'
 
-const UploadBigFile = ({ themeStyle }: { themeStyle: any }) => {
-  const [num, setNum] = useState(0)
+const UploadBigFile = (_props: any) => {
+  const themeStyle: any = useContext(ThemeContext)
 
   return (
-    <div
-      className="card uploadBigFile"
-      style={{
-        borderColor: themeStyle.borderColor,
-        background: themeStyle.bgColor,
-      }}
-    >
-      {num}
-      <button
-        onClick={() => {
-          setNum(num + 1)
+    <KeepAlive>
+      <div
+        className="card uploadBigFile"
+        style={{
+          borderColor: themeStyle.borderColor,
+          background: themeStyle.bgColor,
         }}
       >
-        +1
-      </button>
-    </div>
+        <Input placeholder="KeepAlive缓存真实DOM" />
+      </div>
+    </KeepAlive>
   )
 }
 

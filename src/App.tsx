@@ -13,6 +13,8 @@ import enUS from 'antd/locale/en_US'
 import zh_CN from './language/zh'
 import en_US from './language/en'
 import { style } from '@/styles/theme/cssinJs'
+import { AliveScope } from 'react-activation'
+import { ThemeContext } from '@/styles/theme/cssinJs'
 
 window.addEventListener('load', loadTiming, false)
 
@@ -27,7 +29,15 @@ const ReactApp: React.FC = observer(() => {
   const [count, setCount] = useState(0)
   const [i18nLocale, setI18nLocale] = useState(zhCN)
   const { header } = useStore()
-  let { language, componentSize, direction, themeType, isHydrated } = header
+  let {
+    language,
+    componentSize,
+    direction,
+    themeType,
+    isHydrated,
+    themeColor,
+  } = header
+  const themeStyle = themeType === 'light' ? style.light : style.dark
 
   // 设置 antd 语言国际化
   const setAntdLanguage = (): void => {
@@ -45,27 +55,32 @@ const ReactApp: React.FC = observer(() => {
 
   return (
     <BrowserRouter>
+      <AliveScope>
       {/*  @ts-ignore */}
-      <IntlProvider locale={language} messages={messages[language]}>
-        <ConfigProvider
-          direction={direction as any}
-          locale={i18nLocale as any}
-          componentSize={componentSize as any}
-          theme={{
-            algorithm:
-              themeType === 'light'
-                ? theme.defaultAlgorithm
-                : theme.darkAlgorithm,
-            token: {
-              themeStyle: themeType === 'light' ? style.light : style.dark,
-            } as any,
-          }}
-        >
-          <AuthRouter>
-            <Router />
-          </AuthRouter>
-        </ConfigProvider>
-      </IntlProvider>
+        <IntlProvider locale={language} messages={messages[language]}>
+          <ConfigProvider
+            direction={direction as any}
+            locale={i18nLocale as any}
+            componentSize={componentSize as any}
+            theme={{
+              algorithm:
+                themeType === 'light'
+                  ? theme.defaultAlgorithm
+                  : theme.darkAlgorithm,
+              token: {
+                themeStyle,
+                colorPrimary: themeColor,
+              } as any,
+            }}
+          >
+            <ThemeContext.Provider value={themeStyle}>
+              <AuthRouter>
+                <Router />
+              </AuthRouter>
+            </ThemeContext.Provider>
+          </ConfigProvider>
+        </IntlProvider>
+      </AliveScope>
     </BrowserRouter>
   )
 })

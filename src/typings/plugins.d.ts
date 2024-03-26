@@ -4,6 +4,7 @@ declare module "js-md5";
 declare module "js-cookie";
 declare module "ahooks";
 declare module "react-intl";
+declare module "react-activation";
 declare module "react-transition-group";
 declare module "vite-plugin-eslint";
 declare module "vite-plugin-imagemin";
