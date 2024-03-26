@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const LayoutTabs = () => {
-  return <div>Tabs</div>
-}
+	return <div>Tabs</div>;
+};
 
-export default LayoutTabs
+export default LayoutTabs;

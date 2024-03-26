@@ -1,53 +1,53 @@
 {
-  "menuArr": [
-    {
-      "icon": "HomeOutlined",
-      "title": "首页",
-      "path": "/home",
-      "languageID": "menu.home"
-    },
-    {
-      "icon": "ShoppingOutlined",
-      "title": "常用组件",
-      "path": "/assembly",
-      "languageID": "menu.widget",
-      "children": [
-        {
-          "icon": "AppstoreOutlined",
-          "path": "/assembly/button",
-          "title": "按钮",
-          "languageID": "menu.button"
-        }
-      ]
-    },
-    {
-      "icon": "SlackOutlined",
-      "title": "实用功能",
-      "path": "/excise",
-      "languageID": "menu.utilities",
-      "children": [
-        {
-          "icon": "CloudUploadOutlined",
-          "path": "/excise/uploadBigFile",
-          "title": "大文件上传",
-          "languageID": "menu.bigFileUpload"
-        }
-      ]
-    },
-    {
-      "icon": "PaperClipOutlined",
-      "title": "外部链接",
-      "path": "/link",
-      "languageID": "menu.externalLinks",
-      "children": [
-        {
-          "icon": "AppstoreOutlined",
-          "path": "/link/gitee",
-          "title": "Gitee 仓库",
-          "isLink": "https://gitee.com/Embrance-T/react_ts_vite_admin",
-          "languageID": "menu.gitee"
-        }
-      ]
-    }
-  ]
+	"menuArr": [
+		{
+			"icon": "HomeOutlined",
+			"title": "首页",
+			"path": "/home",
+			"languageID": "menu.home"
+		},
+		{
+			"icon": "ShoppingOutlined",
+			"title": "常用组件",
+			"path": "/assembly",
+			"languageID": "menu.widget",
+			"children": [
+				{
+					"icon": "AppstoreOutlined",
+					"path": "/assembly/button",
+					"title": "按钮",
+					"languageID": "menu.button"
+				}
+			]
+		},
+		{
+			"icon": "SlackOutlined",
+			"title": "实用功能",
+			"path": "/excise",
+			"languageID": "menu.utilities",
+			"children": [
+				{
+					"icon": "CloudUploadOutlined",
+					"path": "/excise/uploadBigFile",
+					"title": "大文件上传",
+					"languageID": "menu.bigFileUpload"
+				}
+			]
+		},
+		{
+			"icon": "PaperClipOutlined",
+			"title": "外部链接",
+			"path": "/link",
+			"languageID": "menu.externalLinks",
+			"children": [
+				{
+					"icon": "AppstoreOutlined",
+					"path": "/link/gitee",
+					"title": "Gitee 仓库",
+					"isLink": "https://gitee.com/Embrance-T/react_ts_vite_admin",
+					"languageID": "menu.gitee"
+				}
+			]
+		}
+	]
 }

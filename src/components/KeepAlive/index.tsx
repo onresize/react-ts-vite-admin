@@ -1,12 +1,12 @@
-import { KeepAlive } from 'react-activation'
-import './index.less'
+import { KeepAlive } from "react-activation";
+import "./index.less";
 
 const KeepAliveWrap = ({ children }: { children: any }) => {
-  return (
-    <div className="keepAlive-wrapper">
-      <KeepAlive>{children}</KeepAlive>
-    </div>
-  )
-}
+	return (
+		<div className="keepAlive-wrapper">
+			<KeepAlive>{children}</KeepAlive>
+		</div>
+	);
+};
 
-export default KeepAliveWrap
+export default KeepAliveWrap;
