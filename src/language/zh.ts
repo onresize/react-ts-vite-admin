@@ -17,6 +17,7 @@ export default {
   'header.theme': '主题',
   'header.themeSetting': '主题设置',
   'header.globalTheme': '全局主题',
+  'header.themeColor': '主题选色',
   'header.darkMode': '暗黑模式',
   'header.pageSetting': '界面设置',
   'header.foldMenu': '折叠菜单',

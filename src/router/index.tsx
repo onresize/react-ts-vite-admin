@@ -4,7 +4,7 @@ import { useRoutes } from 'react-router-dom'
 import LazyLoad from '@/router/utils/lazyLoad'
 
 const getRoutes = (routes: any) => {
-  return routes.map((route) => {
+  return routes.map((route: any) => {
     if (route.children) {
       route.children = getRoutes(route.children)
     }

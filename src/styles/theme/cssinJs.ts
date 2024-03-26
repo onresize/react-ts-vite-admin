@@ -1,3 +1,4 @@
+import { createContext } from 'react'
 
 export const style = {
   // 黑色主题
@@ -13,3 +14,6 @@ export const style = {
     borderColor: '#e4e7ed',
   },
 }
+
+// @ts-ignore
+export const ThemeContext = createContext()

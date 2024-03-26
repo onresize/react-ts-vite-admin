@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from '@/styles/theme/cssinJs'
 
-const Gitee = ({ themeStyle }: { themeStyle: any }) => {
+const Gitee = (_props: any) => {
+  const themeStyle: any = useContext(ThemeContext)
+
   return (
     <div
       className="card content-box"

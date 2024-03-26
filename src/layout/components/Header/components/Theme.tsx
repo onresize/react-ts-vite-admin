@@ -21,7 +21,10 @@ const Theme = observer((props: any) => {
     color: themeStyle.fontColor,
   }
 
-  const onChange = () => {}
+  const change = (color: { target: any }) => {
+    // console.log('主题色：', color.target.value)
+    header.setThemeColor(color?.target?.value || header.themeColor)
+  }
 
   return (
     <>
@@ -47,6 +50,15 @@ const Theme = observer((props: any) => {
         <div className="theme-item">
           <span {...{ style }}>{t({ id: 'header.darkMode' })}</span>
           <SwitchDark />
+        </div>
+        <div className="theme-item">
+          <span {...{ style }}>{t({ id: 'header.themeColor' })}</span>
+          <input
+            type="color"
+            value={header.themeColor}
+            onChange={change}
+            style={{ cursor: 'pointer' }}
+          />
         </div>
         <br />
         {/* 界面设置 */}

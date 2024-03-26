@@ -1,3 +1,4 @@
 import { lazy } from 'react'
+import LayoutIdx from '@/layout/index'
 
-export const LayoutIdx = lazy(() => import('@/layout/index'))
+export { LayoutIdx }

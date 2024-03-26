@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ThemeContext } from '@/styles/theme/cssinJs'
 import { theme } from 'antd'
 import './index.less'
 
-const Home = ({ themeStyle }: { themeStyle: any }) => {
+const Home = (_props: any) => {
+  const themeStyle: any = useContext(ThemeContext)
+
   return (
     <div
       className="home card"

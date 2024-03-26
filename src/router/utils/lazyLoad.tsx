@@ -4,14 +4,10 @@ import useStore from '@/mobx/index'
 import { observer } from 'mobx-react-lite'
 import { style } from '@/styles/theme/cssinJs'
 
-const WithAboutCom = observer(({ Com }: { Com: any }) => {
-  const { header } = useStore()
-  let themeStyle = header.themeType === 'light' ? style.light : style.dark
-  return <Com {...{ themeStyle }} />
-})
-
 // 路由懒加载组件
 const LazyLoad = (Com: any, isCache: any = '') => {
+  const { header } = useStore()
+  let themeStyle = header.themeType === 'light' ? style.light : style.dark
 
   return (
     <Suspense
@@ -27,7 +23,7 @@ const LazyLoad = (Com: any, isCache: any = '') => {
         />
       }
     >
-      <WithAboutCom {...{ Com }} />
+      {<Com {...{ themeStyle }} />}
     </Suspense>
   )
 }

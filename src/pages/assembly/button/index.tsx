@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Button } from 'antd'
 import { useIntl } from 'react-intl'
 import Wrapper from '@/components/Wrapper'
+import { ThemeContext } from '@/styles/theme/cssinJs'
 
 const styles = { margin: '6px' }
 
-const ButtonSelf = ({ themeStyle }: { themeStyle: any }) => {
+const ButtonSelf = (_props: any) => {
   const { formatMessage: t } = useIntl()
+  const themeStyle: any = useContext(ThemeContext)
+
   return (
     <div
       className="card"
