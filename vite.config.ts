@@ -41,6 +41,9 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 			open: viteEnv.VITE_OPEN,
 			strictPort: true, // 若端口已被占用则会直接退出
 			cors: true, // 配置 CORS
+			hmr: {
+        overlay: true, // 服务器错误是否显示在页面上
+      },
 			// 开启本地https服务: https://xiaoshen.blog.csdn.net/article/details/135893188
 			https: {
 				key: fs.readFileSync("certs/localhost+3-key.pem"),
