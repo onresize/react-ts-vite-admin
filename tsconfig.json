@@ -1,40 +1,36 @@
 {
-  "compilerOptions": {
-    "target": "ES2020",
-    "types": ["node"],
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
-
-    "moduleResolution": "Bundler",
-    "allowImportingTsExtensions": true, // true: 导入时不需要显式地指定文件扩展名、默认false
-    "resolveJsonModule": true, // true: 允许导入.json文件
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-
-    /* Linting */
-    "strict": true,
-    // 是否检查代码中未使用的变量并警告
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
-
-    "plugins": [
-      {
-        // "name": "react-refresh/babel" // 禁用Fast Refresh特性
-      }
-    ],
-
-    // 解析非相对模块名的基准目录
-    "baseUrl": "./",
-    // 模块名到基于 baseUrl的路径映射的列表。
-    "paths": {
-      "@/*": ["src/*"]
-    }
-  },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "vite.config.ts"],
-  "exclude": ["node_modules", "buildBundle", "dist", "**/*.js"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+	"compilerOptions": {
+		"target": "ES2020",
+		"types": ["node"],
+		"useDefineForClassFields": true,
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+		"skipLibCheck": true,
+		"moduleResolution": "Bundler",
+		"allowImportingTsExtensions": true, // true: 导入时不需要显式地指定文件扩展名、默认false
+		"resolveJsonModule": true, // true: 允许导入.json文件
+		"isolatedModules": true,
+		"noEmit": true,
+		"jsx": "react-jsx",
+		/* Linting */
+		"strict": true,
+		// 是否检查代码中未使用的变量并警告
+		"noUnusedLocals": false,
+		"noUnusedParameters": false,
+		"noFallthroughCasesInSwitch": true,
+		"plugins": [
+			{
+				// "name": "react-refresh/babel" // 禁用Fast Refresh特性
+			}
+		],
+		// 解析非相对模块名的基准目录
+		"baseUrl": "./",
+		// 模块名到基于 baseUrl的路径映射的列表。
+		"paths": {
+			"@/*": ["src/*"]
+		}
+	},
+	"include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "vite.config.ts"],
+	"exclude": ["node_modules", "buildBundle", "dist", "**/*.js"],
+	"references": [{ "path": "./tsconfig.node.json" }]
 }
