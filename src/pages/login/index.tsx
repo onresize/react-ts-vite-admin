@@ -3,7 +3,7 @@ import { ThemeContext } from "@/styles/theme/cssinJs";
 import { Button } from "antd";
 import LoginForm from "./components/LoginForm";
 import SwitchDark from "@/components/SwitchDark";
-import loginLeft from "@/assets/images/login_left.png";
+import loginLeft from "@/assets/images/login_left4.png";
 import logo from "@/assets/images/logo.png";
 import "./index.less";
 
