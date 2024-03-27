@@ -19,7 +19,7 @@
 		"check-conflict": "bash .husky/check-conflict.sh",
 		"check-keyword": "bash .husky/check-keyword.sh",
 		"prepare": "husky install",
-		"commit": "git pull && git add -A && git-cz && git push",
+		"commit": "git add -A && git-cz && git pull && git push",
 		"release": "standard-version -- --release-as major"
 	},
 	"dependencies": {

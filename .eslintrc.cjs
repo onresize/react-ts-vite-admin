@@ -6,7 +6,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
   ],
-  ignorePatterns: ['dist', 'buildBundle', '.eslintrc.cjs', 'lint-staged.config.cjs', '.stylelintrc.cjs', '.prettierrc.cjs', 'postcss.config.js'],
+  ignorePatterns: ['dist', 'buildBundle', '.eslintrc.cjs', 'lint-staged.config.cjs', '.stylelintrc.cjs', '.prettierrc.cjs', 'postcss.config.cjs'],
   parserOptions: {
     parser: '@typescript-eslint/parser',
   },
