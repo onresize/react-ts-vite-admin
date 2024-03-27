@@ -4,8 +4,6 @@
 
 🚀🚀🚀 React-Ts-Vite-Admin，基于 React18、React-Router、React-Hooks、Mbox、TypeScript、Vite、Ant-Design 开源的一套后台管理框架。
 
-
-
 ### 二、Git 仓库地址 (欢迎 Star⭐)
 
 - Gitee：https://gitee.com/Embrance-T/react-ts-vite-admin
@@ -70,18 +68,28 @@ yarn build:lint
 
 ```text
 # eslint 检测代码
-yarn lint:fix
+yarn lint-fix
 
 # prettier 格式化代码
-yarn lint:prettier
+yarn lint-prettier
 
 # stylelint 格式化样式
-yarn lint:stylelint
+yarn lint-stylelint
+
+# 过滤出仅git暂存区的文件统一检测和格式化
+yarn lint-staged
 ```
 
 - **commit：**
 
 ```text
-# 提交代码（会自动执行 lint:lint-staged 命令）
+# 提交代码（会自动执行 lint-staged 命令）
 yarn commit
+```
+
+- **CHANGELOG：**
+
+```text
+# 更新日志文件
+yarn release
 ```
