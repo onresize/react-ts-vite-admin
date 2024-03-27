@@ -4,6 +4,10 @@
 
 🚀🚀🚀 React-Ts-Vite-Admin，基于 React18、React-Router、React-Hooks、Mbox、TypeScript、Vite、Ant-Design 开源的一套后台管理框架。
 
+### 项目相关文档 📚
+
+- 项目更新日志：[CHANGELOG.md](./CHANGELOG.md)
+
 ### 二、Git 仓库地址 (欢迎 Star⭐)
 
 - Gitee：https://gitee.com/Embrance-T/react-ts-vite-admin
