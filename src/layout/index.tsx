@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import { Layout, theme } from "antd";
+import { Layout, theme, Alert } from "antd";
 import useStore from "@/mobx/index";
 import { observer } from "mobx-react-lite";
 import LayoutMenu from "./components/Menu";
@@ -12,6 +12,7 @@ import "./index.less";
 const LayoutIndex: React.FC = observer((_props: any) => {
 	const { Sider, Content } = Layout;
 	const { header } = useStore();
+	const { ErrorBoundary } = Alert;
 
 	return (
 		<section className="container APP" color-mode={header.themeType}>
@@ -21,9 +22,11 @@ const LayoutIndex: React.FC = observer((_props: any) => {
 			<Layout>
 				<LayoutHeader></LayoutHeader>
 				{/* <LayoutTabs></LayoutTabs> */}
-				<Content>
-					<Outlet></Outlet>
-				</Content>
+				<ErrorBoundary>
+					<Content>
+						<Outlet></Outlet>
+					</Content>
+				</ErrorBoundary>
 				<LayoutFooter></LayoutFooter>
 			</Layout>
 		</section>

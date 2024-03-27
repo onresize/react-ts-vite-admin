@@ -5,6 +5,7 @@
     "vscode-icons-team.vscode-icons",
     "eamodio.gitlens",
     "amirha.better-comments-2",
-    "esbenp.prettier-vscode"
+    "esbenp.prettier-vscode",
+    "yoavbls.pretty-ts-errors"
   ]
 }
