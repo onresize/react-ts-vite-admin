@@ -10,6 +10,8 @@
 
 ### 二、Git 仓库地址 (欢迎 Star⭐)
 
+- Gitee：https://gitee.com/onresize/react-ts-vite-admin
+
 - GitHub：https://github.com/onresize/react-ts-vite-admin
 
 ### 三、🔨🔨🔨 项目功能
@@ -31,6 +33,9 @@
 - **Clone：**
 
 ```text
+# Gitee
+- Gitee：https://gitee.com/onresize/react-ts-vite-admin.git
+
 # GitHub
 git clone https://github.com/onresize/react-ts-vite-admin.git
 ```
