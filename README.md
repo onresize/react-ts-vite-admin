@@ -2,7 +2,7 @@
 
 ### 介绍 📖
 
-🚀🚀🚀 React-Ts-Vite-Admin，基于 React18、React-Router、React-Hooks、Mbox、TypeScript、Vite、Ant-Design 开源的一套后台管理框架。
+🚀🚀🚀 React-Ts-Vite-Admin，基于 React18、React-Router、React-Hooks、Mobx、TypeScript、Vite、Ant-Design 开源的一套后台管理框架。
 
 ### 项目相关文档 📚
 
@@ -10,18 +10,18 @@
 
 ### 二、Git 仓库地址 (欢迎 Star⭐)
 
-- Gitee：https://gitee.com/Embrance-T/react-ts-vite-admin
+- Gitee：https://gitee.com/onresize/react-ts-vite-admin
 
 - GitHub：https://github.com/onresize/react-ts-vite-admin
 
 ### 三、🔨🔨🔨 项目功能
 
-- 🚀 采用最新技术找开发：React18、React-Router v6、AHooks、TypeScript、Vite4、Mbox v6
+- 🚀 采用最新技术找开发：React18、React-Router v6、AHooks、TypeScript、Vite4、Mobx
 - 🚀 采用 Vite4 作为项目开发、打包工具（配置了 Gzip 打包、跨域代理、打包预览工具、按需字体压缩、样式前缀兼容...）
 - 🚀 整个项目集成了 TypeScript
-- 🚀 使用 Mbox 做状态管理，集成 mobx-persist-store 开发
+- 🚀 使用 Mobx 做状态管理，集成 mobx-persist-store 开发
 - 🚀 使用 TypeScript 对 Axios 二次封装 （错误拦截、常用请求封装、全局请求 Loading、取消重复请求…）
-- 🚀 支持 Antd 组件大小切换、暗黑、i18n 国际化
+- 🚀 支持 Antd 组件大小切换、暗黑模式、i18n 国际化
 - 🚀 支持 KeepAlive 缓存页面
 - 🚀 使用 自定义高阶组件 进行路由权限拦截（403 页面）、页面按钮权限配置
 - 🚀 支持 React-Router v6 路由懒加载配置、菜单手风琴模式、无限级菜单、多标签页、面包屑导航
@@ -34,7 +34,7 @@
 
 ```text
 # Gitee
-git clone https://gitee.com/Embrance-T/react-ts-vite-admin.git
+- Gitee：https://gitee.com/onresize/react-ts-vite-admin.git
 
 # GitHub
 git clone https://github.com/onresize/react-ts-vite-admin.git
