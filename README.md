@@ -4,7 +4,7 @@
 
 🚀🚀🚀 React-Ts-Vite-Admin，基于 React18、React-Router、React-Hooks、Mobx、TypeScript、Vite、Ant-Design 开源的一套后台管理框架。
 
-### 项目相关文档 📚
+### 一、项目相关文档 📚
 
 - 项目更新日志：[CHANGELOG.md](./CHANGELOG.md)
 
@@ -96,4 +96,57 @@ yarn commit
 ```text
 # 更新日志文件
 yarn release
+```
+
+### 五、文件资源目录 📚
+
+```text
+ react-ts-vite-admin
+ |-- .browserslistrc              # 指定目标浏览器范围
+ ├─  .editorconfig                # 编辑器配置（格式化）
+ |-- .env                         # vite 公用配置
+ |-- .env.development             # 开发环境配置
+ |-- .env.production              # 生产环境配置
+ |-- .eslintignore                # 忽略 Eslint 校验
+ |-- .eslintrc.cjs                # Eslint 校验配置
+ |-- .gitignore                   # git 提交忽略
+ |-- .npmrc                       # 指定包管理器配置
+ |-- .nvmrc                       # 推荐node版本
+ |-- .prettierignore              # 忽略 prettier 格式化
+ |-- .prettierrc.cjs              # prettier 配置
+ |-- .stylelintignore             # 忽略 stylelint 格式化
+ |-- .stylelintrc.cjs             # stylelint 样式格式化配置
+ |-- .versionrc                   # 指定日志文件输出类型
+ |-- CHANGELOG.md                 # 项目更新日志
+ |-- commitlint.config.cjs        # git 提交规范配置
+ |-- index.html                   # 入口 html
+ |-- LICENSE                      # 开源协议文件
+ |-- lint-staged.config.cjs       # lint-staged 配置文件
+ |-- package.json                 # 依赖包管理
+ |-- postcss.config.cjs           # postcss 配置
+ |-- README.md                    # README 介绍
+ |-- tsconfig.json                # typescript 全局配置
+ |-- tsconfig.node.json           # 配置vite.config.ts的编译规则
+ |-- vite.config.ts               # vite配置文件
+ |-- yarn.lock                    # 依赖包包版本锁
+ |-- .husky                       # git规范约束
+ |-- .npm-only-allow              # 指定包管理器相关
+ |-- .vscode                      # vscode推荐配置
+ |-- certs                        # 本地https密钥
+ |-- public                       # 静态资源文件（忽略打包）
+ |-- server                       # 服务端代码
+ |-- src
+ |   |-- assets                   # 静态资源文件
+ |   |-- components               # 全局组件
+ |   |-- config                   # 全局配置项
+ |   |-- hooks                    # 常用 Hooks
+ |   |-- language                 # 语言国际化
+ |   |-- layout                   # 框架布局
+ |   |-- mobx                     # 框状态管理
+ |   |-- pages                    # 路由页面
+ |   |-- patchPlugins             # 补丁插件等
+ |   |-- router                   # 路由管理
+ |   |-- utils                    # 全局工具方法
+ |   |-- styles                   # 全局样式
+ |   |-- typings                  # 全局 ts 声明
 ```
