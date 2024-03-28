@@ -16,8 +16,6 @@ dist-ssr
 fonts-thin
 *.local
 
-LICENSE
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
