@@ -1,0 +1,73 @@
+@keyframes smoking {
+	0% {
+		box-shadow:
+			0 0 0 -1vmin rgb(242 234 232 / 0%),
+			1vmin 0 0 -1vmin #f2eae8,
+			-1vmin 0 0 -1vmin #f2eae8,
+			0.75vmin 0 0 -1vmin #f2eae8,
+			0 -2vmin 0 -1vmin #f2eae8,
+			1vmin -2vmin 0 rgb(242 234 232 / 80%),
+			-1vmin -2vmin 0 -0.25vmin rgb(242 234 232 / 60%),
+			0.75vmin -2vmin 0 1vmin rgb(242 234 232 / 40%);
+	}
+	50% {
+		box-shadow:
+			0 -2vmin 0 #f2eae8,
+			1vmin -4vmin 0 rgb(242 234 232 / 80%),
+			-1vmin -6vmin 0 -0.25vmin rgb(242 234 232 / 60%),
+			0.75vmin -8vmin 0 1vmin rgb(242 234 232 / 40%),
+			0 -4vmin 0 rgb(242 234 232 / 0%),
+			1vmin -6vmin 0 rgb(242 234 232 / 0%),
+			-1vmin -8vmin 0 -0.25vmin rgb(242 234 232 / 0%),
+			0.75vmin -12vmin 0 1vmin rgb(242 234 232 / 0%);
+	}
+	100% {
+		box-shadow:
+			0 -4vmin 0 rgb(242 234 232 / 0%),
+			1vmin -6vmin 0 rgb(242 234 232 / 0%),
+			-1vmin -8vmin 0 -0.25vmin rgb(242 234 232 / 0%),
+			0.75vmin -12vmin 0 1vmin rgb(242 234 232 / 0%),
+			0 -4vmin 0 rgb(242 234 232 / 0%),
+			1vmin -6vmin 0 rgb(242 234 232 / 0%),
+			-1vmin -8vmin 0 -0.25vmin rgb(242 234 232 / 0%),
+			0.75vmin -12vmin 0 1vmin rgb(242 234 232 / 0%);
+	}
+}
+.smoke-cat {
+	position: absolute;
+	bottom: 40px;
+	left: 80px;
+	z-index: 10;
+	box-sizing: border-box;
+	width: 800px;
+	height: 960px;
+	pointer-events: none;
+	user-select: none;
+}
+.smoke-cigar {
+	position: absolute;
+	bottom: 250px;
+	left: 670px;
+	z-index: 11;
+	transform: skewY(-20deg) skewX(40deg);
+	&::before,
+	&::after {
+		position: absolute;
+		top: 0;
+		left: -0.75vmin;
+		width: 1.5vmin;
+		height: 1.5vmin;
+		content: "";
+		border-radius: 100%;
+		box-shadow:
+			0 -2vmin 0 #f2eae8,
+			1vmin -4vmin 0 rgb(242 234 232 / 80%),
+			-1vmin -6vmin 0 -0.25vmin rgb(242 234 232 / 60%),
+			0.75vmin -8vmin 0 1vmin rgb(242 234 232 / 40%);
+		transform: skewX(-40deg) skewY(20deg);
+		animation: smoking 3s linear infinite forwards;
+	}
+	&::after {
+		animation-delay: -1.5s;
+	}
+}

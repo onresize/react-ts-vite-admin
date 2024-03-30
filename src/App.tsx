@@ -47,7 +47,7 @@ const ReactApp: React.FC = observer(() => {
 	}, [language]);
 
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename={"/" + import.meta.env.VITE_GLOB_APP_TITLE}>
 			<AliveScope>
 				{/*  @ts-ignore */}
 				<IntlProvider locale={language} messages={messages[language]}>

@@ -77,9 +77,6 @@ yarn lint-fix
 # prettier 格式化代码
 yarn lint-prettier
 
-# stylelint 格式化样式
-yarn lint-stylelint
-
 # 过滤出仅git暂存区的文件统一检测和格式化
 yarn lint-staged
 ```
@@ -114,8 +111,6 @@ yarn release
  |-- .nvmrc                       # 推荐node版本
  |-- .prettierignore              # 忽略 prettier 格式化
  |-- .prettierrc.cjs              # prettier 配置
- |-- .stylelintignore             # 忽略 stylelint 格式化
- |-- .stylelintrc.cjs             # stylelint 样式格式化配置
  |-- .versionrc                   # 指定日志文件输出类型
  |-- CHANGELOG.md                 # 项目更新日志
  |-- commitlint.config.cjs        # git 提交规范配置
