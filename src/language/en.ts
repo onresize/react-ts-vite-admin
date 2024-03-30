@@ -45,5 +45,6 @@ export default {
 	"menu.utilities": "utilities",
 	"menu.bigFileUpload": "bigFileUpload",
 	"menu.externalLinks": "externalLinks",
-	"menu.gitee": "Gitee repository"
+	"menu.gitee": "Gitee repository",
+	"menu.github": "Github repository"
 };

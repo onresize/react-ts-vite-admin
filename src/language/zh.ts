@@ -45,5 +45,6 @@ export default {
 	"menu.utilities": "实用功能",
 	"menu.bigFileUpload": "大文件上传",
 	"menu.externalLinks": "外部链接",
-	"menu.gitee": "Gitee 仓库"
+	"menu.gitee": "Gitee 仓库",
+	"menu.github": "Github 仓库"
 };

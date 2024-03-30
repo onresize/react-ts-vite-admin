@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "@/styles/theme/cssinJs";
 
-const Gitee = (_props: any) => {
+const Github = (_props: any) => {
 	const themeStyle: any = useContext(ThemeContext);
 
 	return (
@@ -13,9 +13,9 @@ const Gitee = (_props: any) => {
 			}}
 		>
 			<span className="text">
-				Gitee 仓库：
-				<a href="https://gitee.com/onresize/react-ts-vite-admin" target="_blank" rel="noreferrer">
-					https://gitee.com/onresize/react-ts-vite-admin
+				GitHub 仓库：
+				<a href="https://github.com/onresize/react-ts-vite-admin" target="_blank" rel="noreferrer">
+					https://github.com/onresize/react-ts-vite-admin
 				</a>{" "}
 				🍒🍉🍊
 			</span>
@@ -23,4 +23,4 @@ const Gitee = (_props: any) => {
 	);
 };
 
-export default Gitee;
+export default Github;
