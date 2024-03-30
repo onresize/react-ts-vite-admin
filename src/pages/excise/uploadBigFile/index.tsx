@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Input, Button } from "antd";
 // @ts-ignore
-import KeepAlive from "@/components/keepalive/index";
+import KeepAlive from "@/components/KeepAlive/index";
 import { ThemeContext } from "@/styles/theme/cssinJs";
 import { useAliveController } from "react-activation";
 import "./index.less";
