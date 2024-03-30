@@ -1,38 +1,28 @@
 ---
-name: Bug report
-about: Create a report to help us improve
-title: ''
-labels: ''
-assignees: ''
-
+name: 错误报告
+about: 创建一个报告来帮助我们改进
+title: "[错误报告]"
+labels: "bug"
+assignees: "onresize"
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**描述 bug**
+关于bug是什么的清晰而简洁的描述.
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**复现**
+重现行为的步骤: 1.去 '...' 2.击 '....' 3.下滚动到 '...'' 4.查看错误
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**预期行为**
+对您预期发生的情况进行清晰、简洁的描述.
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**屏幕截图**
+如果适用, 请添加屏幕截图以帮助解释您的问题.
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
+**桌面设备 (请填写以下信息):**
 
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
+- 操作系统：[例如: macOs]
+- 浏览器[例如: chrome、safari]
+- 浏览器版本号[例如: 123.0.6312.59]
 
-**Additional context**
-Add any other context about the problem here.
+**其他**
+在此处添加有关该问题的任何其他描述.
