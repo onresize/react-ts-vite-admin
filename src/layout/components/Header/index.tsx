@@ -7,6 +7,7 @@ import Language from "./components/Language";
 import Theme from "./components/Theme";
 import Fullscreen from "./components/Fullscreen";
 import AvatarIcon from "./components/AvatarIcon";
+import GithubStar from "./components/GithubStar";
 import "./index.less";
 
 const LayoutHeader = () => {
@@ -28,6 +29,7 @@ const LayoutHeader = () => {
 				<BreadcrumbNav />
 			</div>
 			<div className="header-ri">
+				<GithubStar />
 				<TextAlign />
 				<ComponentSize />
 				<Language />
