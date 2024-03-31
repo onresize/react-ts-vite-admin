@@ -21,7 +21,7 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 	transFontFile([viteEnv.VITE_GLOB_APP_TITLE]); // 压缩字体
 
 	return {
-		base: viteEnv.VITE_MODE === "pro" ? "/" + viteEnv.VITE_GLOB_APP_TITLE : "/",
+		base: "/" + viteEnv.VITE_GLOB_APP_TITLE,
 		resolve: {
 			alias: {
 				"@": resolve("src")

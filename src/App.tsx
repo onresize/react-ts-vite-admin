@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { ConfigProvider, theme } from "antd";
 import { observer } from "mobx-react-lite";
 import AuthRouter from "./router/utils/authRouter";
@@ -46,12 +46,8 @@ const ReactApp: React.FC = observer(() => {
 		isHydrated && setAntdLanguage();
 	}, [language]);
 
-	const baseNameTag = () => {
-		return import.meta.env.VITE_MODE === "pro" ? "/" + import.meta.env.VITE_GLOB_APP_TITLE : "/";
-	};
-
 	return (
-		<HashRouter basename={baseNameTag()}>
+		<BrowserRouter basename={"/" + import.meta.env.VITE_GLOB_APP_TITLE}>
 			<AliveScope>
 				{/*  @ts-ignore */}
 				<IntlProvider locale={language} messages={messages[language]}>
@@ -75,7 +71,7 @@ const ReactApp: React.FC = observer(() => {
 					</ConfigProvider>
 				</IntlProvider>
 			</AliveScope>
-		</HashRouter>
+		</BrowserRouter>
 	);
 });
 
