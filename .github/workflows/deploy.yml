@@ -48,6 +48,14 @@ jobs:
         with:
           path: ./buildBundle
 
+	# Copy File
+	copy:
+	  name: Deploy
+	  needs: build
+		steps:
+			- name: Copy File
+			  run: cp  buildBundle/index.html buildBundle/404.html
+
   # Deployment job
   deploy:
     environment:
