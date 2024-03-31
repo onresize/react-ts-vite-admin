@@ -43,18 +43,12 @@ jobs:
         run: yarn # or pnpm install / yarn install / bun install
       - name: 执行打包
         run: yarn build:tsc # or pnpm docs:build / yarn docs:build / bun run docs:build
+			- name: 拷贝静态文件
+			  run: cp  buildBundle/index.html buildBundle/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./buildBundle
-
-	# Copy File
-	copy:
-	  name: Deploy
-	  needs: build
-		steps:
-			- name: Copy File
-			  run: cp  buildBundle/index.html buildBundle/404.html
 
   # Deployment job
   deploy:
