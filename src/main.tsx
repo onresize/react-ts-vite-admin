@@ -6,7 +6,7 @@ import "@/assets/fonts-input/font.less";
 import "@/styles/common.less";
 import ReactApp from "./App";
 
-// console.log('env环境:\n', import.meta.env)
+console.log("env环境:\n", import.meta.env);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	// <React.StrictMode>
