@@ -43,7 +43,6 @@ jobs:
         run: yarn # or pnpm install / yarn install / bun install
       - name: 执行打包 🔧
         run: yarn build:tsc # or pnpm docs:build / yarn docs:build / bun run docs:build
-					# cp buildBundle/index.html buildBundle/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
