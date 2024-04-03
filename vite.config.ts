@@ -7,11 +7,10 @@ import { visualizer } from "rollup-plugin-visualizer";
 import viteCompression from "vite-plugin-compression";
 import viteImagemin from "vite-plugin-imagemin";
 import eslintPlugin from "vite-plugin-eslint";
-import basicSsl from "@vitejs/plugin-basic-ssl";
 import fs from "fs";
 import { transFontFile } from "./src/patchPlugins/trans-font";
 
-const resolve = (dir: string): string => path.resolve(__dirname, dir);
+const resolve = (dir: string, ...rest: string[]): string => path.resolve(__dirname, dir, ...rest);
 
 // https://vitejs.dev/config/
 export default defineConfig((mode: ConfigEnv): UserConfig => {
@@ -47,8 +46,8 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 			},
 			// 开启本地https服务: https://xiaoshen.blog.csdn.net/article/details/135893188
 			https: {
-				key: fs.readFileSync("certs/localhost+3-key.pem"),
-				cert: fs.readFileSync("certs/localhost+3.pem")
+				key: fs.readFileSync(resolve("certs", "localhost+3-key.pem")),
+				cert: fs.readFileSync(resolve("certs", "localhost+3.pem"))
 			},
 			// 代理跨域
 			proxy: {
@@ -61,7 +60,6 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 		},
 		plugins: [
 			react(),
-			basicSsl(), // 本地开启https相关
 			// EJS模板能力
 			createHtmlPlugin({
 				inject: {
