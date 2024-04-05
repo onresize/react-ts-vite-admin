@@ -5,8 +5,6 @@
 
 yarn format-code # 格式化暂存区代码风格
 
-yarn tsc
-
 # yarn check-conflict # 冲突检测
 
 # yarn check-keyword # 检测debugger
