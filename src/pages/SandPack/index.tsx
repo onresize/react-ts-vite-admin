@@ -1,11 +1,11 @@
 import React from "react";
 import { Sandpack } from "@codesandbox/sandpack-react";
 import codeBlock from "./codeBlock";
-import { useLocation } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import styles from "./index.module.less";
 
 function SandPack() {
-	const { search } = useLocation();
+	const [searchParams] = useSearchParams();
 
 	return (
 		<div className={styles.box}>
@@ -13,19 +13,19 @@ function SandPack() {
 				theme="light"
 				options={{
 					resizablePanels: true,
-					autorun: true,
+					autorun: false,
 					autoReload: false,
 					editorHeight: "100vh",
 					showTabs: true,
 					closableTabs: true,
 					showNavigator: false,
-					showConsole: true,
+					showConsole: false,
 					showConsoleButton: true,
 					showLineNumbers: true
 				}}
 				files={{
 					"/index.js": {
-						code: codeBlock?.[search.slice(1)] || codeBlock.promise1
+						code: codeBlock?.[searchParams.get("codeType")] || codeBlock.promise1
 					}
 				}}
 				template="vanilla"
