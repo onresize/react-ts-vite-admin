@@ -29,7 +29,6 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 		// global css
 		css: {
 			modules: {
-				scopeBehaviour: "global" | "local",
 				localsConvention: "camelCaseOnly"
 			},
 			preprocessorOptions: {

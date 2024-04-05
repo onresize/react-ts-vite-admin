@@ -12,14 +12,14 @@
 		"lint-fix": "eslint --fix --ext .js,.ts,.tsx ./src",
 		"lint-prettier": "prettier --write --loglevel warn \"src/**/*.{js,ts,json,tsx,css,less,scss,html,md}\"",
 		"lint-staged": "lint-staged",
-		"tsc": "tsc --noEmit",
 		"preview": "vite preview",
 		"format-code": "bash .husky/format-code.sh",
 		"check-conflict": "bash .husky/check-conflict.sh",
 		"check-keyword": "bash .husky/check-keyword.sh",
 		"prepare": "husky install",
 		"commit": "git add -A && git-cz && git pull && git push",
-		"release": "standard-version -- --release-as major"
+		"release": "standard-version -- --release-as major",
+		"tsc": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@ant-design/happy-work-theme": "^1.0.0",

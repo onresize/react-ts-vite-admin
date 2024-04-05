@@ -19,7 +19,6 @@ function SandPack() {
 					showTabs: true,
 					closableTabs: true,
 					showNavigator: false,
-					showHeader: false,
 					showConsole: true,
 					showConsoleButton: true,
 					showLineNumbers: true
