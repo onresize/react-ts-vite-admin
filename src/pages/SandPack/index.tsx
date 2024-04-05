@@ -7,6 +7,7 @@ import styles from "./index.module.less";
 function SandPack() {
 	const [searchParams] = useSearchParams();
 
+	let search: string = searchParams.get("codeType") || "promise1";
 	return (
 		<div className={styles.box}>
 			<Sandpack
@@ -25,7 +26,7 @@ function SandPack() {
 				}}
 				files={{
 					"/index.js": {
-						code: codeBlock?.[searchParams.get("codeType")] || codeBlock.promise1
+						code: codeBlock[search]
 					}
 				}}
 				template="vanilla"
