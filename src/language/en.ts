@@ -40,6 +40,7 @@ export default {
 	"header.isSureLoginOut": "Do you want to log out?",
 
 	"menu.home": "home",
+	"menu.sandPack": "sandPack",
 	"menu.widget": "widget",
 	"menu.button": "button",
 	"menu.utilities": "utilities",

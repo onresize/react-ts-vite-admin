@@ -27,6 +27,12 @@ export const rootRouter: RouteObject[] = [
 		title: "登录页",
 		key: "login_key"
 	},
+	{
+		path: "/SandPack",
+		com: lazy(() => import("@/pages/SandPack")),
+		title: "代码沙盒",
+		key: "SandPack_key"
+	},
 	...routerArray,
 	{
 		path: "*",

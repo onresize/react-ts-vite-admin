@@ -7,6 +7,12 @@
 			"languageID": "menu.home"
 		},
 		{
+			"icon": "CodepenCircleOutlined",
+			"title": "代码沙盒",
+			"path": "/SandPack",
+			"languageID": "menu.sandPack"
+		},
+		{
 			"icon": "ShoppingOutlined",
 			"title": "常用组件",
 			"path": "/assembly",

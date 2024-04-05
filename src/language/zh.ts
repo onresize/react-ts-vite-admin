@@ -40,6 +40,7 @@ export default {
 	"header.isSureLoginOut": "是否确认退出登录?",
 
 	"menu.home": "首页",
+	"menu.sandPack": "代码沙盒",
 	"menu.widget": "常用组件",
 	"menu.button": "按钮",
 	"menu.utilities": "实用功能",

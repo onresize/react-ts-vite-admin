@@ -47,6 +47,8 @@
 		"styled-components": "^6.1.8"
 	},
 	"devDependencies": {
+		"@codesandbox/sandpack-react": "^2.13.7",
+		"@codesandbox/sandpack-themes": "^2.0.21",
 		"@commitlint/cli": "^19.2.1",
 		"@commitlint/config-conventional": "^19.1.0",
 		"@types/node": "^20.11.28",

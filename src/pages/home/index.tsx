@@ -1,14 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useReducer, useRef, forwardRef, useImperativeHandle } from "react";
 import { ThemeContext } from "@/styles/theme/cssinJs";
-import { theme } from "antd";
-import "./index.less";
+import { theme, Button } from "antd";
+import { home } from "./index.module.less";
 
 const Home = (_props: any) => {
 	const themeStyle: any = useContext(ThemeContext);
 
 	return (
 		<div
-			className="home card"
+			className={`${home} card`}
 			style={{
 				borderColor: themeStyle.borderColor,
 				background: themeStyle.bgColor
