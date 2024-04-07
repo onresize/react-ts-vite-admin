@@ -76,6 +76,7 @@
 		"rollup-plugin-visualizer": "^5.12.0",
 		"standard-version": "^9.5.0",
 		"typescript": "5.0.2",
+		"vanilla-tilt": "^1.8.1",
 		"vite": "^4.4.5",
 		"vite-plugin-compression": "^0.5.1",
 		"vite-plugin-eslint": "^1.8.1",

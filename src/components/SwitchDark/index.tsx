@@ -1,12 +1,12 @@
 import { Switch } from "antd";
 import useStore from "@/mobx/index";
-import "./index.less";
+import styles from "./index.module.less";
 
 const SwitchDark = (_props: any) => {
 	const { header } = useStore();
 	return (
 		<Switch
-			className="dark"
+			className={styles.dark}
 			defaultChecked={header.themeType == "dark"}
 			checkedChildren={<>🌞</>}
 			unCheckedChildren={<>🌜</>}
