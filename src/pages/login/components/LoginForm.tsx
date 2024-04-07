@@ -42,31 +42,58 @@ const LoginForm = (_props: any) => {
 
 	return (
 		<>
-			<Form
-				form={form}
-				name="basic"
-				labelCol={{ span: 5 }}
-				initialValues={initFormValue}
-				onFinish={onFinish}
-				onFinishFailed={onFinishFailed}
-				size="large"
-				autoComplete="off"
+			<ConfigProvider
+				theme={{
+					components: {
+						Input: {
+							activeBg: "#fff",
+							activeShadow: "#fff",
+							hoverBg: "#fff",
+							errorActiveShadow: "0 0 0 2px rgba(255, 38, 5, 0.06)"
+						},
+						Button: {
+							primaryShadow: "0 2px 0 rgba(0, 0, 0, 0.02)"
+						}
+					},
+					token: {
+						colorBgContainer: "#fff",
+						colorWarningBg: "#fff",
+						colorBorder: "#fff",
+						colorErrorBorderHover: "#fff",
+						colorWarningBorderHover: "#fff",
+						colorTextPlaceholder: "rgba(0, 0, 0, 0.25)",
+						colorTextDescription: "rgba(0, 0, 0, 0.45)",
+						colorIcon: "rgba(0, 0, 0, 0.45)",
+						colorIconHover: "rgba(0, 0, 0, 0.88)"
+					}
+				}}
 			>
-				<Form.Item name="username" rules={[{ required: true, message: "请输入用户名" }]}>
-					<Input className="custom-input" placeholder="用户名：admin / user" prefix={<UserOutlined />} />
-				</Form.Item>
-				<Form.Item name="password" rules={[{ required: true, message: "请输入密码" }]}>
-					<Input.Password className="custom-input" placeholder="密码：123456" prefix={<LockOutlined />} />
-				</Form.Item>
-				<Form.Item className="login-btn">
-					<Button className="btn" onClick={() => form.resetFields()} icon={<CloseCircleOutlined />}>
-						{t({ id: "login.reset" })}
-					</Button>
-					<Button className="btn" type="primary" htmlType="submit" loading={loading} icon={<UserOutlined />}>
-						{t({ id: "login.confirm" })}
-					</Button>
-				</Form.Item>
-			</Form>
+				<Form
+					form={form}
+					name="basic"
+					labelCol={{ span: 5 }}
+					initialValues={initFormValue}
+					onFinish={onFinish}
+					onFinishFailed={onFinishFailed}
+					size="large"
+					autoComplete="off"
+				>
+					<Form.Item name="username" rules={[{ required: true, message: "请输入用户名" }]}>
+						<Input className="custom-input" placeholder="用户名：admin / user" prefix={<UserOutlined />} />
+					</Form.Item>
+					<Form.Item name="password" rules={[{ required: true, message: "请输入密码" }]}>
+						<Input.Password className="custom-input" placeholder="密码：123456" prefix={<LockOutlined />} />
+					</Form.Item>
+					<Form.Item className="login-btn">
+						<Button className="login-btn" onClick={() => form.resetFields()} icon={<CloseCircleOutlined />}>
+							{t({ id: "login.reset" })}
+						</Button>
+						<Button className="login-btn1" type="primary" htmlType="submit" loading={loading} icon={<UserOutlined />}>
+							{t({ id: "login.confirm" })}
+						</Button>
+					</Form.Item>
+				</Form>
+			</ConfigProvider>
 		</>
 	);
 };
