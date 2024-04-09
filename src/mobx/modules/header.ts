@@ -26,7 +26,8 @@ class Header {
 	themeColor = "#1890ff";
 
 	// 重置状态
-	@action resetState() {
+	resetState() {
+		console.log("重置状态");
 		globalThis.localStorage.clear();
 		this.isCollapse = false;
 		this.language = ["zh", "en"].includes(language) ? language : "zh";
