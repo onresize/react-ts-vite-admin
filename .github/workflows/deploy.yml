@@ -1,12 +1,15 @@
 name: Deploy React-project site to Pages
 
 on:
-  # Runs on pushes targeting the `main` branch. Change this to `master` if you're
-  # using the `master` branch as the default branch.
+  # master分支push触发
   push:
     branches: [master]
+	
+	# PR同步触发
+	pull_request:
+		types: [synchronize]
 
-  # Allows you to run this workflow manually from the Actions tab
+  # 仓库手动触发
   workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages

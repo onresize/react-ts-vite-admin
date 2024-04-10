@@ -52,13 +52,6 @@
 					"title": "Github 仓库",
 					"isLink": "https://github.com/onresize/react-ts-vite-admin",
 					"languageID": "menu.github"
-				},
-				{
-					"icon": "AppstoreOutlined",
-					"path": "/link/gitee",
-					"title": "Gitee 仓库",
-					"isLink": "https://gitee.com/onresize/react-ts-vite-admin",
-					"languageID": "menu.gitee"
 				}
 			]
 		}

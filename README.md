@@ -8,13 +8,7 @@
 
 - 项目更新日志：[CHANGELOG.md](./CHANGELOG.md)
 
-### 二、Git 仓库地址 (欢迎 Star⭐)
-
-- Gitee：https://gitee.com/onresize/react-ts-vite-admin
-
-- GitHub：https://github.com/onresize/react-ts-vite-admin
-
-### 三、🔨🔨🔨 项目功能
+### 二、🔨🔨🔨 项目功能
 
 - 🚀 采用最新技术找开发：React18、React-Router v6、AHooks、TypeScript、Vite4、Mobx
 - 🚀 采用 Vite4 作为项目开发、打包工具（配置了 Gzip 打包、跨域代理、打包预览工具、按需字体压缩、样式前缀兼容...）
@@ -28,15 +22,10 @@
 - 🚀 使用 Prettier 统一格式化代码，集成 Eslint、Stylelint 代码校验规范（项目规范配置）
 - 🚀 使用 husky、lint-staged、commitlint、commitizen、cz-git 规范提交信息（项目规范配置）
 
-### 四、安装使用步骤 📑
-
+### 三、安装使用步骤 📑
+```text
 - **Clone：**
 
-```text
-# Gitee
-- Gitee：https://gitee.com/onresize/react-ts-vite-admin.git
-
-# GitHub
 git clone https://github.com/onresize/react-ts-vite-admin.git
 ```
 
@@ -95,7 +84,7 @@ yarn commit
 yarn release
 ```
 
-### 五、文件资源目录 📚
+### 四、文件资源目录 📚
 
 ```text
  react-ts-vite-admin
