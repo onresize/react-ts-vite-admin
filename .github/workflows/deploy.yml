@@ -5,9 +5,8 @@ on:
   push:
     branches: [master]
 	
-	# PR同步触发
+	# PR触发
 	pull_request:
-		types: [synchronize]
 
   # 仓库手动触发
   workflow_dispatch:
