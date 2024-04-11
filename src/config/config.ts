@@ -9,9 +9,6 @@ export const TABS_BLACK_LIST: string[] = ["/403", "/404", "/500", "/login"];
 // 路由白名单
 export const ROUTER_WHITE_LIST: string[] = ["/login", "/SandPack", "/403", "/404", "/500"];
 
-// 高德地图key
-export const MAP_KEY: string = "";
-
 // 后端微服务端口名
 export const PORT1 = "/hooks";
 export const PORT2 = "/geeker";
