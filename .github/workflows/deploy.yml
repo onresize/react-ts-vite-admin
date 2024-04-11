@@ -4,9 +4,6 @@ on:
   # master分支push触发
   push:
     branches: [master]
-	
-	# PR触发
-	pull_request:
 
   # 仓库手动触发
   workflow_dispatch:
