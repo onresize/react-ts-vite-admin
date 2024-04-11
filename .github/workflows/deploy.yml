@@ -41,7 +41,7 @@ jobs:
       - name: 执行安装依赖
         run: yarn # or pnpm install / yarn install / bun install
       - name: 执行打包 🔧
-        run: yarn build:tsc # or pnpm docs:build / yarn docs:build / bun run docs:build
+        run: yarn build:pro # or pnpm docs:build / yarn docs:build / bun run docs:build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
