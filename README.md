@@ -51,10 +51,16 @@ yarn devonLine
 
 ```text
 # 生产环境打包并编译检测ts
-yarn build:tsc
+yarn build:pro
 
 # 生产环境打包并使用eslint检测
 yarn build:lint
+
+# 开发环境打包
+yarn build:dev
+
+# 打包开发环境、docker打包镜像
+yarn deploy:docker
 ```
 
 - **Lint：**
@@ -89,7 +95,8 @@ yarn release
 ```text
  react-ts-vite-admin
  |-- .browserslistrc              # 指定目标浏览器范围
- ├─  .editorconfig                # 编辑器配置（格式化）
+ |-- .editorconfig                # 编辑器配置（格式化）
+ |-- .dockerignore                # docker打包镜像忽略
  |-- .env                         # vite 公用配置
  |-- .env.development             # 开发环境配置
  |-- .env.production              # 生产环境配置
@@ -105,7 +112,9 @@ yarn release
  |-- commitlint.config.cjs        # git 提交规范配置
  |-- index.html                   # 入口 html
  |-- LICENSE                      # 开源协议文件
+ |-- Dockerfile                   # docker打包镜像配置
  |-- lint-staged.config.cjs       # lint-staged 配置文件
+ |-- nginx.conf                   # 线上默认nginx配置
  |-- package.json                 # 依赖包管理
  |-- postcss.config.cjs           # postcss 配置
  |-- README.md                    # README 介绍
