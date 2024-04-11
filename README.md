@@ -22,10 +22,31 @@
 - 🚀 使用 Prettier 统一格式化代码，集成 Eslint、Stylelint 代码校验规范（项目规范配置）
 - 🚀 使用 husky、lint-staged、commitlint、commitizen、cz-git 规范提交信息（项目规范配置）
 
-### 三、安装使用步骤 📑
-```text
+### 三、自托管 📑
+
+**来自 docker hub:**
+
+```sh
+docker run -d --name it-tools --restart unless-stopped -p 8080:80 onresize/react-ts-vite-admin:latest
+```
+
+**来自 github packages:**
+
+```sh
+docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/onresize/react-ts-vite-admin:latest
+```
+
+**其他方案:**
+
+- [Cloudron](https://www.cloudron.io/store/tech.ittools.cloudron.html)
+- [Tipi](https://www.runtipi.io/docs/apps-available)
+- [Unraid](https://unraid.net/community/apps?q=it-tools)
+
+
+### 四、安装使用步骤 📑
 - **Clone：**
 
+```text
 git clone https://github.com/onresize/react-ts-vite-admin.git
 ```
 
@@ -33,7 +54,6 @@ git clone https://github.com/onresize/react-ts-vite-admin.git
 
 ```text
 yarn
-
 # 安装失败，请升级 nodejs 到 18 以上
 ```
 
@@ -90,7 +110,7 @@ yarn commit
 yarn release
 ```
 
-### 四、文件资源目录 📚
+### 五、文件资源目录 📚
 
 ```text
  react-ts-vite-admin
