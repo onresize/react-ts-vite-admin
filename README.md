@@ -27,13 +27,13 @@
 **来自 docker hub:**
 
 ```sh
-docker run -d --name it-tools --restart unless-stopped -p 8080:80 onresize/react-ts-vite-admin:latest
+docker run -d --name web --restart unless-stopped -p 8080:80 onresize/react-ts-vite-admin:latest
 ```
 
 **来自 github packages:**
 
 ```sh
-docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/onresize/react-ts-vite-admin:latest
+docker run -d --name web --restart unless-stopped -p 8080:80 ghcr.io/onresize/react-ts-vite-admin:latest
 ```
 
 **其他方案:**
@@ -114,6 +114,7 @@ yarn release
 
 ```text
  react-ts-vite-admin
+ ------------------------------------------------------------
  |-- .browserslistrc              # 指定目标浏览器范围
  |-- .editorconfig                # 编辑器配置（格式化）
  |-- .dockerignore                # docker打包镜像忽略
@@ -162,4 +163,5 @@ yarn release
  |   |-- utils                    # 全局工具方法
  |   |-- styles                   # 全局样式
  |   |-- typings                  # 全局 ts 声明
+ ------------------------------------------------------------
 ```
