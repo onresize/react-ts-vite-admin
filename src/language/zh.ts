@@ -43,6 +43,7 @@ export default {
 	"menu.sandPack": "代码沙盒",
 	"menu.widget": "常用组件",
 	"menu.button": "按钮",
+	"menu.swiper": "轮播图",
 	"menu.utilities": "实用功能",
 	"menu.bigFileUpload": "大文件上传",
 	"menu.externalLinks": "外部链接",

@@ -1,0 +1,84 @@
+.card {
+	box-sizing: border-box;
+	box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+	background: #fff;
+	border-radius: 10px;
+	padding: 10px;
+	width: fit-content;
+	height: fit-content;
+	text-align: center;
+
+	.swiper-box {
+		position: relative;
+		z-index: 2;
+		width: 330px;
+		height: 198px;
+		overflow: hidden;
+		box-sizing: content-box;
+		background-image: url(https://img.alicdn.com/imgextra/i2/O1CN01Bmkv4R1bbGNp05GpE_!!6000000003483-2-tps-660-396.png);
+		background-size: cover;
+
+		.fixed {
+			position: absolute;
+			top: 12px;
+			left: 35px;
+			width: 260px;
+			height: 163px;
+			overflow: hidden;
+
+			.aniBox {
+				animation: loopAdFn 15s infinite 2s running;
+				display: flex;
+				z-index: -1;
+
+				&:hover {
+					animation-play-state: paused;
+				}
+			}
+
+			@keyframes loopAdFn {
+				0% {
+					transform: translate(0);
+				}
+				15% {
+					transform: translate(0);
+				}
+				20% {
+					transform: translate(-260px);
+				}
+				35% {
+					transform: translate(-260px);
+				}
+				40% {
+					transform: translate(-520px);
+				}
+				55% {
+					transform: translate(-520px);
+				}
+				60% {
+					transform: translate(-780px);
+				}
+				75% {
+					transform: translate(-780px);
+				}
+				80% {
+					transform: translate(-1040px);
+				}
+				95% {
+					transform: translate(-1040px);
+				}
+				100% {
+					transform: translate(-1300px);
+				}
+			}
+
+			.slide-img-item {
+				flex-grow: 0;
+				flex-shrink: 0;
+				width: 260px;
+				height: 163px;
+				-webkit-user-drag: none;
+			}
+		}
+	}
+}

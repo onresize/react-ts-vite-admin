@@ -2,6 +2,7 @@ import React, { useContext, useState, useReducer, useRef, forwardRef, useImperat
 import { ThemeContext } from "@/styles/theme/cssinJs";
 import { theme, Button } from "antd";
 import useStore from "@/mobx/index";
+import WithCard, { WrapCom } from "@/components/HOC/WithCard/index";
 // @ts-ignore
 import { home } from "./index.module.less";
 
@@ -9,16 +10,7 @@ const Home = (_props: any) => {
 	const themeStyle: any = useContext(ThemeContext);
 	const { header } = useStore();
 
-	return (
-		<div
-			className={`${home} card`}
-			style={{
-				// background: themeStyle.bgColor,
-				border: header.themeType == "dark" ? `1px solid ${themeStyle.borderColor}` : "none",
-				filter: header.themeType == "light" ? "grayscale(100%) invert(1)" : ""
-			}}
-		></div>
-	);
+	return <WrapCom></WrapCom>;
 };
 
 export default Home;

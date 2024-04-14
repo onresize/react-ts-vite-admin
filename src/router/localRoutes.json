@@ -23,6 +23,12 @@
 					"path": "/assembly/button",
 					"title": "按钮",
 					"languageID": "menu.button"
+				},
+				{
+					"icon": "AppstoreOutlined",
+					"path": "/assembly/swiper",
+					"title": "轮播图",
+					"languageID": "menu.swiper"
 				}
 			]
 		},

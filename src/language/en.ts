@@ -43,6 +43,7 @@ export default {
 	"menu.sandPack": "sandPack",
 	"menu.widget": "widget",
 	"menu.button": "button",
+	"menu.swiper": "swiper",
 	"menu.utilities": "utilities",
 	"menu.bigFileUpload": "bigFileUpload",
 	"menu.externalLinks": "externalLinks",

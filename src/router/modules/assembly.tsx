@@ -14,7 +14,13 @@ const Assembly: Array<RouteObject> = [
 				com: lazy(() => import("@/pages/assembly/button")),
 				title: "按钮",
 				key: "menu.button"
-			}
+			},
+			{
+				path: "/assembly/swiper",
+				com: lazy(() => import("@/pages/assembly/swiper")),
+				title: "轮播图",
+				key: "menu.swiper"
+			},
 		]
 	}
 ];
