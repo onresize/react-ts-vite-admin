@@ -1,6 +1,7 @@
 import { Layout, theme } from "antd";
 import useStore from "@/mobx/index";
 import { observer } from "mobx-react-lite";
+import { isMobile } from "react-device-detect";
 import CollapseIcon from "./components/CollapseIcon";
 import BreadcrumbNav from "./components/BreadcrumbNav";
 import TextAlign from "./components/TextAlign";
@@ -38,7 +39,7 @@ const LayoutHeader = observer(() => {
 				<ComponentSize />
 				<Language />
 				<Theme />
-				<Fullscreen />
+				{!isMobile && <Fullscreen />}
 				<AvatarIcon />
 			</div>
 		</Header>
