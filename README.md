@@ -48,7 +48,6 @@ docker run -d --name web --restart unless-stopped -p 8080:80 ghcr.io/onresize/re
 
 ```text
 git clone https://github.com/onresize/react-ts-vite-admin.git
-
 # or
 npx @npm-lt/cli
 ```
