@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Layout, theme, Alert } from "antd";
 import useStore from "@/mobx/index";
 import { observer } from "mobx-react-lite";
@@ -13,7 +13,7 @@ import "./index.less";
 const LayoutIndex: React.FC = observer((_props: any) => {
 	const { Sider, Content } = Layout;
 	const { header } = useStore();
-	const { pathname } = useLocation();
+
 	const { ErrorBoundary } = Alert;
 
 	return (
@@ -29,8 +29,8 @@ const LayoutIndex: React.FC = observer((_props: any) => {
 						<Outlet></Outlet>
 					</Content>
 				</ErrorBoundary>
-				<LayoutFooter></LayoutFooter>
-				{pathname.includes("home") && <SmokeCat />}
+				{!header.isMobileBool && <LayoutFooter />}
+				{!header.isMobileBool && <SmokeCat />}
 			</Layout>
 		</section>
 	);

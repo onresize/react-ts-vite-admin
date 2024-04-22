@@ -10,7 +10,7 @@ import useStore from "@/mobx/index";
 import { useAliveController } from "react-activation";
 
 const style = {
-	margin: "0 30px 0 6px"
+	margin: "0 20px 0 0px"
 };
 
 const AvatarIcon = (_props: any) => {

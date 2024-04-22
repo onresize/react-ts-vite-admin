@@ -1,12 +1,19 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import smoke from "@/assets/images/no-smoke.png";
 import "./index.less";
 
 function SmokeCat() {
+	const { pathname } = useLocation();
+
 	return (
 		<>
-			<img src={smoke} alt="" className="smoke-cat" />
-			<div className="smoke-cigar"></div>
+			{pathname.includes("home") && (
+				<div>
+					<img src={smoke} alt="" className="smoke-cat" />
+					<div className="smoke-cigar"></div>
+				</div>
+			)}
 		</>
 	);
 }

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, HashRouter } from "react-router-dom";
 import { ConfigProvider, theme } from "antd";
-import { observer } from "mobx-react-lite";
 import AuthRouter from "./router/utils/authRouter";
-import { loadTiming } from "@/utils/utils";
 import Router from "./router";
+import _ from "lodash-es";
 import useStore from "./mobx/index";
-import { getBrowserLang } from "./utils/utils";
+import { observer } from "mobx-react-lite";
+import { loadTiming, getBrowserLang } from "./utils/utils";
 import { IntlProvider } from "react-intl";
 import zhCN from "antd/locale/zh_CN";
 import enUS from "antd/locale/en_US";
@@ -31,6 +31,17 @@ const ReactApp: React.FC = observer(() => {
 	const { header } = useStore();
 	let { language, componentSize, direction, themeType, isHydrated, themeColor } = header;
 	const themeStyle = themeType === "light" ? style.light : style.dark;
+
+	const listenWin = () => {
+		const screenWidth = document.body.clientWidth;
+		if (screenWidth <= 768) {
+			header.setIsMobileBool(true);
+		} else {
+			header.setIsMobileBool(false);
+		}
+	};
+
+	window.addEventListener("resize", _.throttle(listenWin, 100), false);
 
 	// 设置 antd 语言国际化
 	const setAntdLanguage = (): void => {

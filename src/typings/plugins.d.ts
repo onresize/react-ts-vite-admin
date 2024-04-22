@@ -2,6 +2,7 @@ declare module "qs";
 declare module "nprogress";
 declare module "js-md5";
 declare module "js-cookie";
+declare module "lodash-es";
 declare module "ahooks";
 declare module "react-intl";
 declare module "react-activation";

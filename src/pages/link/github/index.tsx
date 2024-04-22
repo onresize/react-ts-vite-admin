@@ -1,6 +1,5 @@
 import React from "react";
 import WithCard, { WrapCom } from "@/components/HOC/WithCard/index";
-import { ThemeContext } from "@/styles/theme/cssinJs";
 
 const Github = (_props: any) => {
 	return (

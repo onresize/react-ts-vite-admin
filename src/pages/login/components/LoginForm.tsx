@@ -85,10 +85,10 @@ const LoginForm = (_props: any) => {
 						<Input.Password className="custom-input" placeholder="密码：123456" prefix={<LockOutlined />} />
 					</Form.Item>
 					<Form.Item className="login-btn">
-						<Button className="login-btn" onClick={() => form.resetFields()} icon={<CloseCircleOutlined />}>
+						<Button className="login-btn1" onClick={() => form.resetFields()} icon={<CloseCircleOutlined />}>
 							{t({ id: "login.reset" })}
 						</Button>
-						<Button className="login-btn1" type="primary" htmlType="submit" loading={loading} icon={<UserOutlined />}>
+						<Button className="login-btn2" type="primary" htmlType="submit" loading={loading} icon={<UserOutlined />}>
 							{t({ id: "login.confirm" })}
 						</Button>
 					</Form.Item>

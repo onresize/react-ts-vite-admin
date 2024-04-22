@@ -1,4 +1,5 @@
 import { configure, makeAutoObservable, reaction, action } from "mobx";
+import { isMobile } from "react-device-detect";
 import { makePersistable, isHydrated } from "mobx-persist-store";
 import { getBrowserLang } from "@/utils/utils";
 
@@ -24,6 +25,7 @@ class Header {
 	breadcrumbArr = []; // 面包屑集合
 	themeType = isDarkTheme.matches ? "dark" : "light"; // 主题类型
 	themeColor = "#1890ff";
+	isMobileBool = isMobile; // 是否移动端或视口宽度小于768
 
 	// 重置状态
 	resetState() {
@@ -37,6 +39,7 @@ class Header {
 		this.breadcrumb = true;
 		this.breadcrumbArr = [];
 		this.themeType = isDarkTheme.matches ? "dark" : "light";
+		this.isMobileBool = isMobile;
 	}
 
 	constructor() {
@@ -53,7 +56,8 @@ class Header {
 				"breadcrumb",
 				"breadcrumbArr",
 				"themeType",
-				"themeColor"
+				"themeColor",
+				"isMobileBool"
 			],
 			storage: window.localStorage
 		});
@@ -63,7 +67,7 @@ class Header {
 		return isHydrated(this);
 	}
 
-	updateCollapse(bool: boolean) {
+	setCollapse(bool: boolean) {
 		this.isCollapse = bool;
 	}
 
@@ -97,6 +101,10 @@ class Header {
 
 	setThemeColor(color: string) {
 		this.themeColor = color;
+	}
+
+	setIsMobileBool(bool: boolean) {
+		this.isMobileBool = bool;
 	}
 }
 

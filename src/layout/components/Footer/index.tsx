@@ -1,5 +1,5 @@
-import { observer } from "mobx-react-lite";
 import { theme } from "antd";
+import { observer } from "mobx-react-lite";
 import useStore from "@/mobx/index";
 import "./index.less";
 

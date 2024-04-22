@@ -7,11 +7,12 @@
 	border-bottom-style: solid;
 	border-bottom-width: 1px;
 	box-shadow: 0 0 12px rgb(0 0 0 / 12%);
+	overflow: auto hidden;
 	.header-lf {
 		display: flex;
 		align-items: center;
 		.collapsed {
-			margin: 0 20px;
+			margin: 0 15px;
 			font-size: 18px;
 			cursor: pointer;
 			transition: color 0.3s;
@@ -19,6 +20,7 @@
 	}
 	.header-ri {
 		display: flex;
+		width: fit-content;
 		align-items: center;
 		margin-left: 22px;
 		.icon-style {
@@ -26,10 +28,6 @@
 			font-size: 19px;
 			line-height: 19px;
 			cursor: pointer;
-		}
-		.username {
-			margin: 0 20px 0 0;
-			font-size: 15px;
 		}
 		.ant-avatar {
 			cursor: pointer;

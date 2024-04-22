@@ -1,4 +1,6 @@
 import { Layout, theme } from "antd";
+import useStore from "@/mobx/index";
+import { observer } from "mobx-react-lite";
 import CollapseIcon from "./components/CollapseIcon";
 import BreadcrumbNav from "./components/BreadcrumbNav";
 import TextAlign from "./components/TextAlign";
@@ -10,7 +12,9 @@ import AvatarIcon from "./components/AvatarIcon";
 import GithubStar from "./components/GithubStar";
 import "./index.less";
 
-const LayoutHeader = () => {
+const LayoutHeader = observer(() => {
+	const { header } = useStore();
+
 	const { Header } = Layout;
 	const {
 		// @ts-ignore
@@ -26,10 +30,10 @@ const LayoutHeader = () => {
 		>
 			<div className="header-lf">
 				<CollapseIcon />
-				<BreadcrumbNav />
+				{!header.isMobileBool && <BreadcrumbNav />}
 			</div>
 			<div className="header-ri">
-				<GithubStar />
+				{!header.isMobileBool && <GithubStar />}
 				<TextAlign />
 				<ComponentSize />
 				<Language />
@@ -39,6 +43,6 @@ const LayoutHeader = () => {
 			</div>
 		</Header>
 	);
-};
+});
 
 export default LayoutHeader;

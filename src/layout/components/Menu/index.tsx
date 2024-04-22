@@ -88,13 +88,12 @@ const LayoutMenu: React.FC = observer((_props: any) => {
 		window.onresize = () => {
 			const screenWidth = document.body.clientWidth;
 			screenWidth <= 950 ? setBool(true) : setBool(false);
-			// console.log(' screenWidth:', screenWidth)
 
 			if (!header.isCollapse && screenWidth < 1200) {
-				header.updateCollapse(true);
+				header.setCollapse(true);
 			}
 			if (header.isCollapse && screenWidth > 1200) {
-				header.updateCollapse(false);
+				header.setCollapse(false);
 			}
 		};
 	};
@@ -127,7 +126,7 @@ const LayoutMenu: React.FC = observer((_props: any) => {
 
 	return (
 		// <div className={classnames('menu', { menuHeight: bool })}>
-		<div className={`menu ${bool && "menuHeight"}`}>
+		<div className={`menu`}>
 			<Spin spinning={loading}>
 				<Menu
 					style={{

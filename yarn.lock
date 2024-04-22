@@ -7314,6 +7314,13 @@ react-activation@^0.12.4:
     react-node-key "^0.4.0"
     szfe-tools "^0.0.0-beta.7"
 
+react-device-detect@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.npmmirror.com/react-device-detect/-/react-device-detect-2.2.3.tgz#97a7ae767cdd004e7c3578260f48cf70c036e7ca"
+  integrity sha512-buYY3qrCnQVlIFHrC5UcUoAj7iANs/+srdkwsnNjI7anr3Tt7UY6MqNxtMLlr0tMBied0O49UZVK8XKs3ZIiPw==
+  dependencies:
+    ua-parser-js "^1.0.33"
+
 react-devtools-inline@4.4.0:
   version "4.4.0"
   resolved "https://registry.npmmirror.com/react-devtools-inline/-/react-devtools-inline-4.4.0.tgz#e032a6eb17a9977b682306f84b46e683adf4bf68"
@@ -8676,6 +8683,11 @@ typescript@5.0.2:
   version "5.0.2"
   resolved "https://registry.npmmirror.com/typescript/-/typescript-5.0.2.tgz#891e1a90c5189d8506af64b9ef929fca99ba1ee5"
   integrity sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==
+
+ua-parser-js@^1.0.33:
+  version "1.0.37"
+  resolved "https://registry.npmmirror.com/ua-parser-js/-/ua-parser-js-1.0.37.tgz#b5dc7b163a5c1f0c510b08446aed4da92c46373f"
+  integrity sha512-bhTyI94tZofjo+Dn8SN6Zv8nBDvyXTymAdM3LDI/0IboIUwTu1rEhW7v2TfiVsoYWgkQ4kOVqnI8APUFbIQIFQ==
 
 uglify-js@^3.1.4:
   version "3.17.4"

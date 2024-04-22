@@ -8,7 +8,7 @@ import useStore from "@/mobx/index";
 
 const Theme = observer((props: any) => {
 	const [visible, setVisible] = useState<boolean>(false);
-	const { setThemeConfig, updateCollapse } = props;
+	const { setThemeConfig, setCollapse } = props;
 	const { header } = useStore();
 	const { formatMessage: t } = useIntl();
 
@@ -63,7 +63,7 @@ const Theme = observer((props: any) => {
 				</Divider>
 				<div className="theme-item">
 					<span {...{ style }}>{t({ id: "header.foldMenu" })}</span>
-					<Switch checked={header.isCollapse} onChange={e => header.updateCollapse(e)} />
+					<Switch checked={header.isCollapse} onChange={e => header.setCollapse(e)} />
 				</div>
 				<div className="theme-item">
 					<span {...{ style }}>{t({ id: "header.breadcrumbNav" })}</span>

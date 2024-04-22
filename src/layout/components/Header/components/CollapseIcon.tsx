@@ -9,7 +9,7 @@ const CollapseIcon: React.FC = observer((props: any) => {
 		<div
 			className="collapsed"
 			onClick={() => {
-				header.updateCollapse(!header.isCollapse);
+				header.setCollapse(!header.isCollapse);
 			}}
 		>
 			{header.isCollapse ? <MenuUnfoldOutlined id="isCollapse" /> : <MenuFoldOutlined id="isCollapse" />}
