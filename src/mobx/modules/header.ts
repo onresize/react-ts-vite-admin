@@ -16,11 +16,12 @@ console.log("系统语言:", language);
 type themeConfig = "light" | "dark";
 
 class Header {
-	isCollapse = false; // false：展开
+	isCollapse = true; // false：展开
 	language = ["zh", "en"].includes(language) && language; // 国际化
 	componentSize = "middle"; // 组件大小
 	direction = "ltr"; // 字体方向
 	footer = true; // 页脚
+	eruda = false; // eruda调试面板
 	breadcrumb = true; // 面包屑状态
 	breadcrumbArr = []; // 面包屑集合
 	themeType = isDarkTheme.matches ? "dark" : "light"; // 主题类型
@@ -36,6 +37,7 @@ class Header {
 		this.componentSize = "middle";
 		this.direction = "ltr";
 		this.footer = true;
+		this.eruda = false;
 		this.breadcrumb = true;
 		this.breadcrumbArr = [];
 		this.themeType = isDarkTheme.matches ? "dark" : "light";
@@ -85,6 +87,12 @@ class Header {
 
 	setFooter(bool: boolean) {
 		this.footer = bool;
+	}
+
+	setEruda(bool: boolean) {
+		this.eruda = bool;
+		// @ts-ignore
+		bool ? eruda.init() : eruda.destroy();
 	}
 
 	setBreadcrumb(bool: boolean) {

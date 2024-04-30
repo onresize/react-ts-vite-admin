@@ -57,7 +57,7 @@ const TextAlign: React.FC = observer(() => {
 	};
 
 	return (
-		<Tooltip placement="bottom" title={header.direction.toLocaleUpperCase()} fresh={true}>
+		<Tooltip placement="bottom" fresh={true}>
 			<div className="icon-style" onClick={onHandClick}>
 				{header.direction == "ltr" ? <LtrIcon /> : <RtlIcon />}
 			</div>

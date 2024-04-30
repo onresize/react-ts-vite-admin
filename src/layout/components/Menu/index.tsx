@@ -76,26 +76,10 @@ const LayoutMenu: React.FC = observer((_props: any) => {
 		try {
 			setLoading(true);
 			const deepMenuArr = deepLoopFloat(menuArr);
-			// console.log('最终的menuList：', deepMenuArr)
 			setMenuList(deepMenuArr);
 		} finally {
 			setLoading(false);
 		}
-	};
-
-	const [bool, setBool] = useState(false);
-	const listenWindow = () => {
-		window.onresize = () => {
-			const screenWidth = document.body.clientWidth;
-			screenWidth <= 950 ? setBool(true) : setBool(false);
-
-			if (!header.isCollapse && screenWidth < 1200) {
-				header.setCollapse(true);
-			}
-			if (header.isCollapse && screenWidth > 1200) {
-				header.setCollapse(false);
-			}
-		};
 	};
 
 	const navigate = useNavigate();
@@ -110,14 +94,6 @@ const LayoutMenu: React.FC = observer((_props: any) => {
 		};
 	}, [header.language]);
 
-	useEffect(() => {
-		window.addEventListener("resize", listenWindow);
-
-		return () => {
-			window.removeEventListener("resize", listenWindow);
-		};
-	}, []);
-
 	// 刷新页面保持高亮
 	useEffect(() => {
 		setSelectKeys([pathname]);
@@ -125,8 +101,7 @@ const LayoutMenu: React.FC = observer((_props: any) => {
 	}, [pathname]);
 
 	return (
-		// <div className={classnames('menu', { menuHeight: bool })}>
-		<div className={`menu`}>
+		<div className={`menu`} style={{ background: themeStyle.bgColor }}>
 			<Spin spinning={loading}>
 				<Menu
 					style={{
@@ -138,6 +113,7 @@ const LayoutMenu: React.FC = observer((_props: any) => {
 					mode="inline"
 					triggerSubMenuAction="click"
 					items={menuList}
+					inlineCollapsed={header.isCollapse}
 					selectedKeys={selectKeys}
 					openKeys={openKeys}
 					onOpenChange={menuOpenChange}

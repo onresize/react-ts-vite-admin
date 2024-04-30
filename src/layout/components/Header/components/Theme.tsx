@@ -82,6 +82,11 @@ const Theme = observer((props: any) => {
 					<span {...{ style }}>{t({ id: "header.footer" })}</span>
 					<Switch checked={header.footer} onChange={e => header.setFooter(e)} />
 				</div>
+
+				<div className="theme-item">
+					<span {...{ style }}>{t({ id: "header.eruda" })}</span>
+					<Switch checked={header.eruda} onChange={e => header.setEruda(e)} />
+				</div>
 			</Drawer>
 		</>
 	);

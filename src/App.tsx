@@ -36,12 +36,20 @@ const ReactApp: React.FC = observer(() => {
 		const screenWidth = document.body.clientWidth;
 		if (screenWidth <= 768) {
 			header.setIsMobileBool(true);
+			header.setCollapse(true);
 		} else {
 			header.setIsMobileBool(false);
+			header.setCollapse(false);
 		}
 	};
 
-	window.addEventListener("resize", _.throttle(listenWin, 100), false);
+	useEffect(() => {
+		window.addEventListener("resize", _.throttle(listenWin, 100), false);
+
+		() => {
+			window.removeEventListener("resize", listenWin);
+		};
+	}, []);
 
 	// 设置 antd 语言国际化
 	const setAntdLanguage = (): void => {

@@ -23,6 +23,7 @@ export default {
 	"header.foldMenu": "折叠菜单",
 	"header.breadcrumbNav": "面包屑导航",
 	"header.footer": "页脚",
+	"header.eruda": "eruda调试面板",
 	"header.fullScreen": "全屏",
 	"header.exitFullScreen": "退出全屏",
 	"header.personalData": "个人资料",

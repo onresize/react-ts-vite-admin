@@ -23,6 +23,7 @@ export default {
 	"header.foldMenu": "FoldMenu",
 	"header.breadcrumbNav": "BreadcrumbNav",
 	"header.footer": "Footer",
+	"header.eruda": "eruda panel",
 	"header.fullScreen": "Full Screen",
 	"header.exitFullScreen": "Exit Full Screen",
 	"header.personalData": "Personal Data",
