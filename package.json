@@ -99,6 +99,6 @@
 		"bin-wrapper": "npm:bin-wrapper-china"
 	},
 	"engines": {
-		"node": "v18.x"
+		"node": ">= v18.x"
 	}
 }
