@@ -9,6 +9,7 @@ import viteImagemin from "vite-plugin-imagemin";
 import eslintPlugin from "vite-plugin-eslint";
 import fs from "fs";
 import { transFontFile } from "./src/patchPlugins/trans-font";
+import { codeInspectorPlugin } from "code-inspector-plugin";
 
 const resolve = (dir: string, ...rest: string[]): string => path.resolve(__dirname, dir, ...rest);
 
@@ -63,6 +64,9 @@ export default defineConfig((mode: ConfigEnv): UserConfig => {
 		},
 		plugins: [
 			react(),
+			codeInspectorPlugin({
+				bundler: "vite"
+			}),
 			// EJS模板能力
 			createHtmlPlugin({
 				inject: {

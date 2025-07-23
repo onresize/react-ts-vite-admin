@@ -103,6 +103,7 @@ const LayoutMenu: React.FC = observer((_props: any) => {
 	return (
 		<div className={`menu`} style={{ background: themeStyle.bgColor }}>
 			<Spin spinning={loading}>
+				{/* inlineCollapsed={header.isCollapse} */}
 				<Menu
 					style={{
 						borderRightColor: themeStyle.borderColor,
@@ -113,7 +114,6 @@ const LayoutMenu: React.FC = observer((_props: any) => {
 					mode="inline"
 					triggerSubMenuAction="click"
 					items={menuList}
-					inlineCollapsed={header.isCollapse}
 					selectedKeys={selectKeys}
 					openKeys={openKeys}
 					onOpenChange={menuOpenChange}
